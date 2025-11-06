@@ -269,7 +269,9 @@ e^{2\alpha h^\star}
 \tag{20}
 \end{equation}
 
-\subsection{Visualization of the PDF for different $\ell/L$}
+
+
+\subsection{Visualization of the obtained PDF for different $\ell/L$}
 
 \begin{figure}[h!]
     \centering
@@ -284,6 +286,105 @@ Figure~\thefigure\ shows the PDFs
 \(\mathcal{P}_{\delta_\ell u}(\nu)\) as a function of \(\nu\)
 for several values of \(\ell/L\).
 As \(\ell/L\) decreases, the distributions become more peaked and develop heavier tails.
+
+
+\subsection{Normalized increment by the order 2 moment}
+
+From the multifractal formalism, the $p$-th order moment of the velocity increment
+is expressed as
+\begin{equation}
+\langle |\delta_\ell u|^p \rangle \sim \ell^{\zeta_p},
+\quad\text{with}\quad
+\zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr].
+\tag{21}
+\end{equation}
+
+Using the Kolmogorov–Oboukhov log-normal spectrum
+\begin{equation}
+\mathcal{D}^E(h) = 1 - \frac{(h - c_1)^2}{2c_2},
+\tag{22}
+\end{equation}
+the minimization of Eq.~(21) gives
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}h}
+\bigl[p h + 1 - \mathcal{D}^E(h)\bigr] = 0
+\quad\Longrightarrow\quad
+p = \frac{h - c_1}{c_2}.
+\tag{23}
+\end{equation}
+
+Hence, the minimizing exponent is
+\begin{equation}
+h_p = c_1 + p c_2,
+\tag{24}
+\end{equation}
+and inserting this value into Eq.~(21) gives
+\begin{equation}
+\zeta_p = p c_1 + c_2 p^2.
+\tag{25}
+\end{equation}
+
+In particular, for the second-order moment ($p=2$):
+\begin{equation}
+\boxed{
+\langle (\delta_\ell u)^2 \rangle
+\sim
+\left( \frac{\ell}{L} \right)^{2c_1 + 4c_2}.
+}
+\tag{26}
+\end{equation}
+
+We now define a normalized increment
+\begin{equation}
+\boxed{
+\delta_\ell \nu
+= \frac{\delta_\ell u}{\sqrt{\langle (\delta_\ell u)^2 \rangle}}
+= \delta_\ell u
+\left( \frac{L}{\ell} \right)^{c_1 + 2c_2}.
+}
+\tag{27}
+\end{equation}
+
+Replacing $\delta_\ell u = \delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$
+in Eq.~(20) gives the normalized form of the PDF:
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
+&\approx
+\frac{1}{2\pi}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{
+\frac{2\pi}{
+\frac{\alpha}{c_2}
++2\alpha^2
+(\delta_\ell \nu)^{2}
+e^{2\alpha h^\star}
+}
+}
+\\[0.8em]
+&\quad\times
+\exp\!\left[
+-\alpha\!\left(
+\frac{(h^\star-c_1)^2}{2c_2}-h^\star
+\right)
+-\frac{1}{2}
+(\delta_\ell \nu)^{2}
+e^{2\alpha h^\star}
+\right],
+\end{aligned}
+}
+\tag{28}
+\end{equation}
+where $h^\star$ is still determined by Eq.~(18)
+with $\delta_\ell u$ replaced by $\delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$.
+
+This normalization ensures that
+\begin{equation}
+\langle (\delta_\ell \nu)^2 \rangle = 1,
+\tag{29}
+\end{equation}
+for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
 
 \section*{References}
 \noindent
