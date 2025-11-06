@@ -1,0 +1,294 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\title{Evaluation of increment PDFs using Laplace's method}
+\author{}
+\date{}
+\maketitle
+
+\section{Starting point: the distribution of $h$}
+
+We start from Equation~(11) of~[1], which defines the probability density function of the local Hölder exponent \(h\):
+\begin{equation}
+\mathcal{P}_h^{(\ell)}(h)
+=
+\frac{
+\left(\tfrac{\ell}{L}\right)^{1-\mathcal{D}^E(h)}
+}{
+\displaystyle \int_{h_{\min}}^{h_{\max}}
+\left(\tfrac{\ell}{L}\right)^{1-\mathcal{D}^E(h)}\,\mathrm{d}h
+}.
+\tag{1}
+\end{equation}
+
+Using the Kolmogorov–Oboukhov log-normal spectrum
+\[
+\mathcal{D}^E(h)=1-\frac{(h-c_1)^2}{2c_2},
+\]
+with \(h_{\min}=-\infty\) and \(h_{\max}=+\infty\),
+we obtain
+\begin{equation}
+\mathcal{P}_h^{(\ell)}(h)
+=
+\frac{
+\exp\!\left[-\tfrac{(h - c_1)^2}{2c_2}\ln\!\left(\tfrac{L}{\ell}\right)\right]
+}{
+\displaystyle \int_{-\infty}^{+\infty}
+\exp\!\left[-\tfrac{(h - c_1)^2}{2c_2}\ln\!\left(\tfrac{L}{\ell}\right)\right]
+\mathrm{d}h
+}.
+\tag{2}
+\end{equation}
+
+To simplify notation, we define
+\begin{equation}
+\alpha = -\ln\!\left(\frac{\ell}{L}\right) > 0.
+\tag{3}
+\end{equation}
+Then the expression becomes
+\begin{equation}
+\mathcal{P}_h^{(\ell)}(h)
+=
+\frac{
+\exp\!\left[-\frac{\alpha}{2c_2}(h - c_1)^2\right]
+}{
+\displaystyle \int_{-\infty}^{+\infty}
+\exp\!\left[-\frac{\alpha}{2c_2}(h - c_1)^2\right]
+\mathrm{d}h
+}.
+\tag{4}
+\end{equation}
+
+The denominator is a Gaussian integral:
+\begin{equation}
+\int_{-\infty}^{+\infty}
+e^{-\frac{\alpha}{2c_2}(h - c_1)^2}\mathrm{d}h
+= \sqrt{\frac{2\pi c_2}{\alpha}}.
+\tag{5}
+\end{equation}
+Hence,
+\begin{equation}
+\boxed{
+\mathcal{P}_h^{(\ell)}(h)
+=
+\sqrt{\frac{\alpha}{2\pi c_2}}\,
+\exp\!\left[-\frac{\alpha}{2c_2}(h - c_1)^2\right].
+}
+\tag{6}
+\end{equation}
+
+\section{Computation of the PDF using Laplace's method}
+
+We now consider the probability density function of velocity increments:
+\begin{equation}
+\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+= \frac{1}{2\pi\sigma}\,
+\sqrt{\frac{\alpha}{c_2}}
+\int_{-\infty}^{+\infty}
+\exp[-f(h,\alpha,\delta_\ell u)]\,\mathrm{d}h.
+\tag{7}
+\end{equation}
+with
+\begin{equation}
+f(h,\alpha,\delta_\ell u)
+= \alpha\!\left(\frac{(h-c_1)^2}{2c_2}-h\right)
++ \frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}.
+\tag{8}
+\end{equation}
+
+\paragraph{Laplace approximation and signs.}
+The integral is dominated by the minimum of \(f(h,\alpha,\delta_\ell u)\).
+A quadratic expansion around the stationary point \(h^\star\) gives
+\begin{equation}
+\int_{-\infty}^{+\infty}\exp[-f(h,\alpha,\delta_\ell u)]\,\mathrm{d}h
+\approx
+\exp[-f(h^\star,\alpha,\delta_\ell u)]
+\sqrt{\frac{2\pi}{f''(h^\star,\alpha,\delta_\ell u)}}.
+\tag{9}
+\end{equation}
+Therefore
+\begin{equation}
+\boxed{
+\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+\approx
+\frac{1}{2\pi\sigma}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{\frac{2\pi}{f''(h^\star,\alpha,\delta_\ell u)}}\,
+\exp[-f(h^\star,\alpha,\delta_\ell u)].
+}
+\tag{10}
+\end{equation}
+
+Since \(\alpha>0\), the term \(\alpha (h-c_1)^2/(2c_2)\) grows quadratically for large \(|h|\),
+and the exponential term is positive.
+Thus \(f(h,\alpha,\delta_\ell u)\to+\infty\) as \(|h|\to\infty\),
+so the stationary point is a \emph{minimum} and \(f''(h^\star,\alpha,\delta_\ell u)>0\),
+which justifies the steepest descent method.
+
+\subsection{Case A: assuming \(h^\star = c_1\)}
+
+From \((8)\),
+\begin{equation}
+f(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
+= \alpha c_1
++ \frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1},
+\tag{11}
+\end{equation}
+and
+\begin{equation}
+f''(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
+= \frac{\alpha}{c_2}
++2\alpha^2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1}.
+\tag{12}
+\end{equation}
+Plug into \((10)\):
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+&\approx
+\frac{1}{2\pi\sigma}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{
+\frac{2\pi}{
+\frac{\alpha}{c_2}
++2\alpha^2
+\left(\tfrac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1}
+}
+}
+\\[0.8em]
+&\quad\times
+\exp\!\left[
+-\alpha c_1
+-\frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1}
+\right].
+\end{aligned}
+}
+\tag{13}
+\end{equation}
+
+\subsection{Case B: solving \(f'(h,\alpha,\delta_\ell u)=0\) via the Lambert \(W\) function}
+
+From \((8)\),
+\begin{equation}
+\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell u)
+= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
++ \alpha\!\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}.
+\tag{14}
+\end{equation}
+Set to zero:
+\begin{equation}
+h - (c_1 + c_2)
+= -c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}.
+\tag{15}
+\end{equation}
+Multiply by \(-2\alpha e^{-2\alpha h}\):
+\begin{equation}
+(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
+= 2\alpha c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}.
+\tag{16}
+\end{equation}
+Let
+\begin{equation}
+u = -2\alpha(h - c_1 - c_2)
+\quad\Longrightarrow\quad
+u e^{u}
+= 2\alpha c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}.
+\tag{17}
+\end{equation}
+Hence
+\begin{equation}
+\boxed{
+h^\star
+= (c_1 + c_2)
+- \frac{1}{2\alpha}
+W\!\left(
+2\alpha c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}
+\right),
+}
+\tag{18}
+\end{equation}
+where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
+
+Moreover,
+\begin{equation}
+f''(h,\alpha,\delta_\ell u)
+= \frac{\alpha}{c_2}
++ 2\alpha^2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}.
+\tag{19}
+\end{equation}
+Insert \(h=h^\star\) into \((10)\) to obtain:
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+&\approx
+\frac{1}{2\pi\sigma}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{
+\frac{2\pi}{
+\frac{\alpha}{c_2}
++2\alpha^2
+\left(\tfrac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h^\star}
+}
+}
+\\[0.8em]
+&\quad\times
+\exp\!\left[
+-\alpha\!\left(
+\frac{(h^\star-c_1)^2}{2c_2}-h^\star
+\right)
+-\frac{1}{2}
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h^\star}
+\right].
+\end{aligned}
+}
+\tag{20}
+\end{equation}
+
+\subsection{Visualization of the PDF for different $\ell/L$}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.64\textwidth]{image.png} % 80% of previous size
+    \caption{Probability density functions \(\mathcal{P}_{\delta_\ell u}(\nu)\)
+    for different values of \(\ell/L\), compared with a standard Gaussian \(N(0,1)\).}
+    \label{fig:pdfplot}
+\end{figure}
+
+To illustrate the influence of the scale ratio \(\ell/L\),
+Figure~\thefigure\ shows the PDFs
+\(\mathcal{P}_{\delta_\ell u}(\nu)\) as a function of \(\nu\)
+for several values of \(\ell/L\).
+As \(\ell/L\) decreases, the distributions become more peaked and develop heavier tails.
+
+\section*{References}
+\noindent
+[1] L. Chevillard, B. Castaing, A. Arneodo, E. Lévêque, J.-F. Pinton, and S. G. Roux,
+\emph{A phenomenological theory of Eulerian and Lagrangian velocity fluctuations in turbulent flows},
+C.~R.~Physique, \textbf{13}, 899–928 (2012).
+
+\end{document}
