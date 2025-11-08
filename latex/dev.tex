@@ -288,7 +288,7 @@ for several values of \(\ell/L\).
 As \(\ell/L\) decreases, the distributions become more peaked and develop heavier tails.
 
 
-\subsection{Normalized increment by the order 2 moment}
+\subsection{Order-2 moment of the increment}
 
 From the multifractal formalism, the $p$-th order moment of the velocity increment
 is expressed as
@@ -334,7 +334,7 @@ In particular, for the second-order moment ($p=2$):
 \tag{26}
 \end{equation}
 
-We now define a normalized increment
+We now define a normalized increment (independent of $\sigma$)
 \begin{equation}
 \boxed{
 \delta_\ell \nu
@@ -346,19 +346,20 @@ We now define a normalized increment
 \end{equation}
 
 Replacing $\delta_\ell u = \delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$
-in Eq.~(20) gives the normalized form of the PDF:
+in Eq.~(20) gives the normalized form of the PDF (with $\sigma$ unchanged):
 \begin{equation}
 \boxed{
 \begin{aligned}
 \mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
 &\approx
-\frac{1}{2\pi}
+\frac{1}{2\pi\sigma}
 \sqrt{\frac{\alpha}{c_2}}\,
 \sqrt{
 \frac{2\pi}{
 \frac{\alpha}{c_2}
 +2\alpha^2
-(\delta_\ell \nu)^{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 e^{2\alpha h^\star}
 }
 }
@@ -369,7 +370,8 @@ e^{2\alpha h^\star}
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 -\frac{1}{2}
-(\delta_\ell \nu)^{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 e^{2\alpha h^\star}
 \right],
 \end{aligned}
@@ -377,7 +379,7 @@ e^{2\alpha h^\star}
 \tag{28}
 \end{equation}
 where $h^\star$ is still determined by Eq.~(18)
-with $\delta_\ell u$ replaced by $\delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$.
+with $\delta_\ell u$ replaced by $\delta_\ell \nu$.
 
 This normalization ensures that
 \begin{equation}
@@ -385,6 +387,7 @@ This normalization ensures that
 \tag{29}
 \end{equation}
 for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
+
 
 \section*{References}
 \noindent
