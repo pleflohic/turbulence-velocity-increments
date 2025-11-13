@@ -83,6 +83,8 @@ Hence,
 
 \section{Computation of the PDF using Laplace's method}
 
+\subsection{General form of the PDF}
+
 We now consider the probability density function of velocity increments:
 \begin{equation}
 \mathcal{P}_{\delta_\ell u}(\delta_\ell u)
@@ -130,115 +132,20 @@ Thus \(f(h,\alpha,\delta_\ell u)\to+\infty\) as \(|h|\to\infty\),
 so the stationary point is a \emph{minimum} and \(f''(h^\star,\alpha,\delta_\ell u)>0\),
 which justifies the steepest descent method.
 
-\subsection{Case A: assuming \(h^\star = c_1\)}
-
-From \((8)\),
-\begin{equation}
-f(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
-= \alpha c_1
-+ \frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha c_1},
-\tag{11}
-\end{equation}
-and
-\begin{equation}
-f''(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
-= \frac{\alpha}{c_2}
-+2\alpha^2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha c_1}.
-\tag{12}
-\end{equation}
-Plug into \((10)\):
-\begin{equation}
-\boxed{
-\begin{aligned}
-\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
-&\approx
-\frac{1}{2\pi\sigma}
-\sqrt{\frac{\alpha}{c_2}}\,
-\sqrt{
-\frac{2\pi}{
-\frac{\alpha}{c_2}
-+2\alpha^2
-\left(\tfrac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha c_1}
-}
-}
-\\[0.8em]
-&\quad\times
-\exp\!\left[
--\alpha c_1
--\frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha c_1}
-\right].
-\end{aligned}
-}
-\tag{13}
-\end{equation}
-
-\subsection{Case B: solving \(f'(h,\alpha,\delta_\ell u)=0\) via the Lambert \(W\) function}
-
-From \((8)\),
-\begin{equation}
-\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell u)
-= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+ \alpha\!\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha h}.
-\tag{14}
-\end{equation}
-Set to zero:
-\begin{equation}
-h - (c_1 + c_2)
-= -c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha h}.
-\tag{15}
-\end{equation}
-Multiply by \(-2\alpha e^{-2\alpha h}\):
-\begin{equation}
-(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
-= 2\alpha c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha(c_1 + c_2)}.
-\tag{16}
-\end{equation}
-Let
-\begin{equation}
-u = -2\alpha(h - c_1 - c_2)
-\quad\Longrightarrow\quad
-u e^{u}
-= 2\alpha c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha(c_1 + c_2)}.
-\tag{17}
-\end{equation}
-Hence
-\begin{equation}
-\boxed{
-h^\star
-= (c_1 + c_2)
-- \frac{1}{2\alpha}
-W\!\left(
-2\alpha c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha(c_1 + c_2)}
-\right),
-}
-\tag{18}
-\end{equation}
-where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
-
-Moreover,
+\vspace{0.2cm}
+Knowing that
 \begin{equation}
 f''(h,\alpha,\delta_\ell u)
-= \frac{\alpha}{c_2}
+=
+\frac{\partial^2 f}{\partial h^2}(h,\alpha,\delta_\ell u)
+=
+\frac{\alpha}{c_2}
 + 2\alpha^2
 \left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha h}.
-\tag{19}
+e^{2\alpha h},
+\tag{11}
 \end{equation}
-Insert \(h=h^\star\) into \((10)\) to obtain:
+we finally obtain
 \begin{equation}
 \boxed{
 \begin{aligned}
@@ -250,7 +157,7 @@ Insert \(h=h^\star\) into \((10)\) to obtain:
 \frac{2\pi}{
 \frac{\alpha}{c_2}
 +2\alpha^2
-\left(\tfrac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
 e^{2\alpha h^\star}
 }
 }
@@ -266,29 +173,11 @@ e^{2\alpha h^\star}
 \right].
 \end{aligned}
 }
-\tag{20}
+\tag{12}
 \end{equation}
 
 
-
-\subsection{Visualization of the obtained PDF for different $\ell/L$}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.64\textwidth]{image.png} % 80% of previous size
-    \caption{Probability density functions \(\mathcal{P}_{\delta_\ell u}(\nu)\)
-    for different values of \(\ell/L\), compared with a standard Gaussian \(N(0,1)\).}
-    \label{fig:pdfplot}
-\end{figure}
-
-To illustrate the influence of the scale ratio \(\ell/L\),
-Figure~\thefigure\ shows the PDFs
-\(\mathcal{P}_{\delta_\ell u}(\nu)\) as a function of \(\nu\)
-for several values of \(\ell/L\).
-As \(\ell/L\) decreases, the distributions become more peaked and develop heavier tails.
-
-
-\subsection{Order-2 moment of the increment}
+\subsection{Normalized PDF}
 
 The $p$-th order moment of the velocity increment
 is expressed as
@@ -296,13 +185,13 @@ is expressed as
 \langle |\delta_\ell u|^p \rangle \sim \ell^{\zeta_p},
 \quad\text{with}\quad
 \zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr].
-\tag{21}
+\tag{13}
 \end{equation}
 
 Using the Kolmogorov–Oboukhov log-normal spectrum
 \begin{equation}
 \mathcal{D}^E(h) = 1 - \frac{(h - c_1)^2}{2c_2},
-\tag{22}
+\tag{14}
 \end{equation}
 the minimization of Eq.~(21) gives
 \begin{equation}
@@ -310,18 +199,18 @@ the minimization of Eq.~(21) gives
 \bigl[p h + 1 - \mathcal{D}^E(h)\bigr] = 0
 \quad\Longrightarrow\quad
 p = \frac{h - c_1}{c_2}.
-\tag{23}
+\tag{15}
 \end{equation}
 
 Hence, the minimizing exponent is
 \begin{equation}
 h_p = c_1 + p c_2,
-\tag{24}
+\tag{16}
 \end{equation}
 and inserting this value into Eq.~(21) gives
 \begin{equation}
 \zeta_p = p c_1 + c_2 p^2.
-\tag{25}
+\tag{17}
 \end{equation}
 
 In particular, for the second-order moment ($p=2$):
@@ -331,10 +220,10 @@ In particular, for the second-order moment ($p=2$):
 \sim
 \left( \frac{\ell}{L} \right)^{2c_1 + 4c_2}.
 }
-\tag{26}
+\tag{18}
 \end{equation}
 
-We now define a normalized increment (independent of $\sigma$)
+We now define a normalized increment
 \begin{equation}
 \boxed{
 \delta_\ell \nu
@@ -342,11 +231,11 @@ We now define a normalized increment (independent of $\sigma$)
 = \delta_\ell u
 \left( \frac{L}{\ell} \right)^{c_1 + 2c_2}.
 }
-\tag{27}
+\tag{19}
 \end{equation}
 
 Replacing $\delta_\ell u = \delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$
-in Eq.~(20) gives the normalized form of the PDF (with $\sigma$ unchanged):
+in Eq.~(20) gives the normalized form of the PDF :
 \begin{equation}
 \boxed{
 \begin{aligned}
@@ -376,17 +265,195 @@ e^{2\alpha h^\star}
 \right],
 \end{aligned}
 }
-\tag{28}
+\tag{20}
 \end{equation}
-where $h^\star$ is still determined by Eq.~(18)
-with $\delta_\ell u$ replaced by $\delta_\ell \nu$.
+where $h^\star$ is such that \(f'(h^\star,\alpha,\delta_\ell u)=0\).
 
+\vspace{0.2cm}
 This normalization ensures that
 \begin{equation}
 \langle (\delta_\ell \nu)^2 \rangle = 1,
-\tag{29}
+\tag{21}
 \end{equation}
 for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
+
+\subsection{Case A: assuming \(h^\star = c_1\)}
+
+From \((8)\),
+\begin{equation}
+f(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
+= \alpha c_1
++ \frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{4c_2},
+\tag{22}
+\end{equation}
+and
+\begin{equation}
+f''(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
+= \frac{\alpha}{c_2}
++2\alpha^2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{4c_2}.
+\tag{23}
+\end{equation}
+Plug into \((10)\):
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
+&\approx
+\frac{1}{2\pi\sigma}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{
+\frac{2\pi}{
+\frac{\alpha}{c_2}
++2\alpha^2
+\left(\tfrac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{4c_2}
+}
+}
+\\[0.8em]
+&\quad\times
+\exp\!\left[
+-\alpha c_1
+-\frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{4c_2}
+\right].
+\end{aligned}
+}
+\tag{24}
+\end{equation}
+
+
+\subsection{Case B: solving \(f'(h,\alpha,\delta_\ell \nu)=0\) via the Lambert \(W\) function}
+
+From \((8)\) with \(\delta_\ell u = \delta_\ell \nu (\ell/L)^{c_1+2c_2}\),
+\begin{equation}
+\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
+= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
++ \alpha\!\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)} e^{2\alpha h}.
+\tag{25}
+\end{equation}
+Set to zero:
+\begin{equation}
+h - (c_1 + c_2)
+= -c_2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+e^{2\alpha h}.
+\tag{26}
+\end{equation}
+Multiply by \(-2\alpha e^{-2\alpha h}\):
+\begin{equation}
+(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
+= 2\alpha c_2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+e^{2\alpha(c_1 + c_2)}.
+\tag{27}
+\end{equation}
+
+Using
+\[
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)} e^{2\alpha(c_1+c_2)}
+= \left(\frac{\ell}{L}\right)^{2c_2},
+\]
+let
+\[
+u = -2\alpha(h - c_1 - c_2).
+\]
+Then
+\begin{equation}
+u e^{u}
+= 2\alpha c_2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2c_2}.
+\tag{28}
+\end{equation}
+Hence
+\begin{equation}
+\boxed{
+h^\star
+= (c_1 + c_2)
+- \frac{1}{2\alpha}
+W\!\left(
+2\alpha c_2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2c_2}
+\right)
+}
+\tag{29}
+\end{equation}
+
+Moreover,
+\begin{equation}
+f''(h,\alpha,\delta_\ell \nu)
+= \frac{\alpha}{c_2}
++ 2\alpha^2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+e^{2\alpha h}
+= \frac{\alpha}{c_2}
++ 2\alpha^2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2c_2}
+e^{2\alpha(h - c_1 - 2c_2)}.
+\tag{30}
+\end{equation}
+
+Insert \(h=h^\star\) into \((10)\):
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
+&\approx
+\frac{1}{2\pi\sigma}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{
+\frac{2\pi}{
+\frac{\alpha}{c_2}
++2\alpha^2
+\left(\tfrac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2c_2}
+e^{2\alpha h^\star}
+}
+}
+\\[0.8em]
+&\quad\times
+\exp\!\left[
+-\alpha\!\left(
+\frac{(h^\star-c_1)^2}{2c_2}-h^\star
+\right)
+-\frac{1}{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2c_2}
+e^{2\alpha h^\star}
+\right].
+\end{aligned}
+}
+\tag{31}
+\end{equation}
+
+
+
+
+\subsection{Visualization of the obtained PDF for different $\ell/L$}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.64\textwidth]{image.png} % 80% of previous size
+    \caption{Probability density functions \(\mathcal{P}_{\delta_\ell u}(\nu)\)
+    for different values of \(\ell/L\), compared with a standard Gaussian \(N(0,1)\).}
+    \label{fig:pdfplot}
+\end{figure}
+
+To illustrate the influence of the scale ratio \(\ell/L\),
+Figure~\thefigure\ shows the PDFs
+\(\mathcal{P}_{\delta_\ell u}(\nu)\) as a function of \(\nu\)
+for several values of \(\ell/L\).
+As \(\ell/L\) decreases, the distributions become more peaked and develop heavier tails.
+
 
 
 
