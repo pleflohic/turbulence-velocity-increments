@@ -98,8 +98,8 @@ with
 \begin{equation}
 f(h,\alpha,\delta_\ell u)
 = \alpha\!\left(\frac{(h-c_1)^2}{2c_2}-h\right)
-+ \frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha h}.
++ \frac{1}{2}e^{2\alpha h}
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}.
 \tag{8}
 \end{equation}
 
@@ -141,8 +141,8 @@ f''(h,\alpha,\delta_\ell u)
 =
 \frac{\alpha}{c_2}
 + 2\alpha^2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha h},
+e^{2\alpha h}
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2},
 \tag{11}
 \end{equation}
 we finally obtain
@@ -157,8 +157,8 @@ we finally obtain
 \frac{2\pi}{
 \frac{\alpha}{c_2}
 +2\alpha^2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
 e^{2\alpha h^\star}
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
 }
 }
 \\[0.8em]
@@ -168,8 +168,8 @@ e^{2\alpha h^\star}
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 -\frac{1}{2}
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
 e^{2\alpha h^\star}
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
 \right].
 \end{aligned}
 }
@@ -247,9 +247,9 @@ in Eq.~(20) gives the normalized form of the PDF :
 \frac{2\pi}{
 \frac{\alpha}{c_2}
 +2\alpha^2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 e^{2\alpha h^\star}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
 }
 }
 \\[0.8em]
@@ -259,10 +259,10 @@ e^{2\alpha h^\star}
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 -\frac{1}{2}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 e^{2\alpha h^\star}
-\right],
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\right]
 \end{aligned}
 }
 \tag{20}
@@ -283,8 +283,8 @@ From \((8)\),
 \begin{equation}
 f(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
 = \alpha c_1
-+ \frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{4c_2},
++ \left(\frac{\ell}{L}\right)^{4c_2}
+\frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2},
 \tag{22}
 \end{equation}
 and
@@ -292,8 +292,8 @@ and
 f''(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
 = \frac{\alpha}{c_2}
 +2\alpha^2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{4c_2}.
+\left(\frac{\ell}{L}\right)^{4c_2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}.
 \tag{23}
 \end{equation}
 Plug into \((10)\):
@@ -308,17 +308,17 @@ Plug into \((10)\):
 \frac{2\pi}{
 \frac{\alpha}{c_2}
 +2\alpha^2
-\left(\tfrac{\delta_\ell \nu}{\sigma}\right)^{2}
 \left(\frac{\ell}{L}\right)^{4c_2}
+\left(\tfrac{\delta_\ell \nu}{\sigma}\right)^{2}
 }
 }
 \\[0.8em]
 &\quad\times
 \exp\!\left[
 -\alpha c_1
--\frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{4c_2}
-\right].
+-\left(\frac{\ell}{L}\right)^{4c_2}
+\frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\right]
 \end{aligned}
 }
 \tag{24}
@@ -331,26 +331,26 @@ From \((8)\) with \(\delta_\ell u = \delta_\ell \nu (\ell/L)^{c_1+2c_2}\),
 \begin{equation}
 \frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
 = \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+ \alpha\!\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)} e^{2\alpha h}.
++ \alpha e^{2\alpha h}\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
 \tag{25}
 \end{equation}
 Set to zero:
 \begin{equation}
 h - (c_1 + c_2)
 = -c_2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha h}
 \left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-e^{2\alpha h}.
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
 \tag{26}
 \end{equation}
 Multiply by \(-2\alpha e^{-2\alpha h}\):
 \begin{equation}
 (-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
 = 2\alpha c_2
+e^{2\alpha(c_1 + c_2)}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
 \left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-e^{2\alpha(c_1 + c_2)}.
 \tag{27}
 \end{equation}
 
@@ -367,8 +367,8 @@ Then
 \begin{equation}
 u e^{u}
 = 2\alpha c_2
+\left(\frac{\ell}{L}\right)^{2c_2}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{2c_2}.
 \tag{28}
 \end{equation}
 Hence
@@ -379,8 +379,8 @@ h^\star
 - \frac{1}{2\alpha}
 W\!\left(
 2\alpha c_2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
 \left(\frac{\ell}{L}\right)^{2c_2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
 \right)
 }
 \tag{29}
