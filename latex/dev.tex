@@ -98,59 +98,71 @@ with
 \begin{equation}
 f(h,\alpha,\delta_\ell u)
 = \alpha\!\left(\frac{(h-c_1)^2}{2c_2}-h\right)
-+ \frac{1}{2}e^{2\alpha h}
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}.
++ \frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}
 \tag{8}
 \end{equation}
 
-\paragraph{Laplace approximation and signs.}
-The integral is dominated by the minimum of \(f(h,\alpha,\delta_\ell u)\).
-A quadratic expansion around the stationary point \(h^\star\) gives
+\paragraph{Laplace approximation}
+Let $I=[a,b]$ be an interval, $\varphi\in C^2(I,\mathbb{R})$
+and $g\in C^0(I,\mathbb{C})$. Assume that:
+\begin{enumerate}
+    \item[(i)] For all $t>0$, $\displaystyle \int_a^b e^{t\varphi(x)} |g(x)|\,dx < +\infty$;
+    \item[(ii)] $\varphi'$ vanishes at a unique point $x_0\in I$ and $\varphi''(x_0)<0$;
+    \item[(iii)] $g(x_0)\neq 0$.
+\end{enumerate}
+Then
+\[
+\int_a^b e^{\,t\varphi(x)}\, g(x)\,dx
+\sim
+\sqrt{\frac{2\pi}{t\,|\varphi''(x_0)|}}\,
+e^{\,t\varphi(x_0)}\, g(x_0)
+\qquad\text{as } t\to +\infty .\]
+
+
+
+$\\[0.8em]$
+Knowing that
 \begin{equation}
-\int_{-\infty}^{+\infty}\exp[-f(h,\alpha,\delta_\ell u)]\,\mathrm{d}h
-\approx
-\exp[-f(h^\star,\alpha,\delta_\ell u)]
-\sqrt{\frac{2\pi}{f''(h^\star,\alpha,\delta_\ell u)}}.
-\tag{9}
+\forall h \in \mathbf{R},
+\quad
+\frac{\partial^2 f}{\partial h^2}(h,\alpha,\delta_\ell u)
+=
+\frac{\alpha}{c_2}
++ 2\alpha^2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}
+\quad > 0
+\tag{11}
 \end{equation}
-Therefore
+
+we just need to verify that $h^\star$ is such that
+$\frac{\partial f}{\partial h}(h^\star,\alpha,\delta_\ell u) = 0$
+to be able to use Laplace approximation.
+
+$\\[0.3em]$
+In this case, by applying the approximation to Eq (7), we get :
+
 \begin{equation}
 \boxed{
 \mathcal{P}_{\delta_\ell u}(\delta_\ell u)
 \approx
 \frac{1}{2\pi\sigma}
 \sqrt{\frac{\alpha}{c_2}}\,
-\sqrt{\frac{2\pi}{f''(h^\star,\alpha,\delta_\ell u)}}\,
+\sqrt{\frac{2\pi}{\frac{\partial^2 f}{\partial h^2}(h,\alpha,\delta_\ell u))}}\,
 \exp[-f(h^\star,\alpha,\delta_\ell u)].
 }
 \tag{10}
 \end{equation}
 
-Since \(\alpha>0\), the term \(\alpha (h-c_1)^2/(2c_2)\) grows quadratically for large \(|h|\),
-and the exponential term is positive.
-Thus \(f(h,\alpha,\delta_\ell u)\to+\infty\) as \(|h|\to\infty\),
-so the stationary point is a \emph{minimum} and \(f''(h^\star,\alpha,\delta_\ell u)>0\),
-which justifies the steepest descent method.
 
-\vspace{0.2cm}
-Knowing that
-\begin{equation}
-f''(h,\alpha,\delta_\ell u)
-=
-\frac{\partial^2 f}{\partial h^2}(h,\alpha,\delta_\ell u)
-=
-\frac{\alpha}{c_2}
-+ 2\alpha^2
-e^{2\alpha h}
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2},
-\tag{11}
-\end{equation}
-we finally obtain
+$\\[0.1em]$
+i.e
 \begin{equation}
 \boxed{
 \begin{aligned}
 \mathcal{P}_{\delta_\ell u}(\delta_\ell u)
-&\approx
+\approx
 \frac{1}{2\pi\sigma}
 \sqrt{\frac{\alpha}{c_2}}\,
 \sqrt{
@@ -161,8 +173,7 @@ e^{2\alpha h^\star}
 \left(\frac{\delta_\ell u}{\sigma}\right)^{2}
 }
 }
-\\[0.8em]
-&\quad\times
+\times
 \exp\!\left[
 -\alpha\!\left(
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
@@ -170,14 +181,122 @@ e^{2\alpha h^\star}
 -\frac{1}{2}
 e^{2\alpha h^\star}
 \left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-\right].
+\right]
 \end{aligned}
 }
 \tag{12}
 \end{equation}
 
 
-\subsection{Normalized PDF}
+\subsection{Case A: assuming \(h^\star = c_1\)}
+
+As a first approximation, we can consider that :
+
+\begin{equation}
+\frac{\partial f}{\partial h}(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
+= 0
+\tag{13}
+\end{equation}
+
+$\\[0.1em]$
+And since
+
+\begin{equation}
+\frac{\partial^2 f}{\partial h^2}(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
+= \frac{\alpha}{c_2}
++2\alpha^2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1}
+\quad > 0
+\tag{14}
+\end{equation}
+
+$\\[0.3em]$
+We can use the Laplace approximation. Eq(12) then becomes :
+
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+\approx
+\frac{1}{2\pi\sigma}
+\sqrt{\frac{\alpha}{c_2}}\,
+\sqrt{
+\frac{2\pi}{
+\frac{\alpha}{c_2}
++2\alpha^2
+\left(\tfrac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1}
+}
+}
+\times
+\exp\!\left[
+\alpha c_1
+-\frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha c_1}
+\right]
+\end{aligned}
+}
+\tag{15}
+\end{equation}
+
+\subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell u)=0\) via the Lambert \(W\) function}
+
+From \((8)\),
+\begin{equation}
+\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell u)
+= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
++ \alpha\!\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}
+\tag{16}
+\end{equation}
+Set to zero:
+\begin{equation}
+h - (c_1 + c_2)
+= -c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h}
+\tag{17}
+\end{equation}
+Multiply by \(-2\alpha e^{-2\alpha h}\):
+\begin{equation}
+(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
+= 2\alpha c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}
+\tag{18}
+\end{equation}
+Let
+\begin{equation}
+u = -2\alpha(h - c_1 - c_2)
+\quad\Longrightarrow\quad
+u e^{u}
+= 2\alpha c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}
+\tag{19}
+\end{equation}
+Hence
+\begin{equation}
+\boxed{
+h^\star
+= (c_1 + c_2)
+- \frac{1}{2\alpha}
+W\!\left(
+2\alpha c_2
+\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}
+\right)
+}
+\tag{20}
+\end{equation}
+where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
+
+$\\[0.1em]$
+We can now plug the obtained $h^\star$ into Eq(12).
+
+
+\section{Normalized PDF}
 
 The $p$-th order moment of the velocity increment
 is expressed as
@@ -185,7 +304,7 @@ is expressed as
 \langle |\delta_\ell u|^p \rangle \sim \ell^{\zeta_p},
 \quad\text{with}\quad
 \zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr].
-\tag{13}
+\tag{21}
 \end{equation}
 
 Using the Kolmogorov–Oboukhov log-normal spectrum
@@ -199,18 +318,18 @@ the minimization of Eq.~(21) gives
 \bigl[p h + 1 - \mathcal{D}^E(h)\bigr] = 0
 \quad\Longrightarrow\quad
 p = \frac{h - c_1}{c_2}.
-\tag{15}
+\tag{22}
 \end{equation}
 
 Hence, the minimizing exponent is
 \begin{equation}
 h_p = c_1 + p c_2,
-\tag{16}
+\tag{23}
 \end{equation}
 and inserting this value into Eq.~(21) gives
 \begin{equation}
 \zeta_p = p c_1 + c_2 p^2.
-\tag{17}
+\tag{24}
 \end{equation}
 
 In particular, for the second-order moment ($p=2$):
@@ -220,7 +339,7 @@ In particular, for the second-order moment ($p=2$):
 \sim
 \left( \frac{\ell}{L} \right)^{2c_1 + 4c_2}.
 }
-\tag{18}
+\tag{25}
 \end{equation}
 
 We now define a normalized increment
@@ -231,11 +350,20 @@ We now define a normalized increment
 = \delta_\ell u
 \left( \frac{L}{\ell} \right)^{c_1 + 2c_2}.
 }
-\tag{19}
+\tag{26}
 \end{equation}
 
+$\\[0.3em]$
+This normalization ensures that
+\begin{equation}
+\langle (\delta_\ell \nu)^2 \rangle = 1,
+\tag{27}
+\end{equation}
+for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
+
+$\\[0.1em]$
 Replacing $\delta_\ell u = \delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$
-in Eq.~(20) gives the normalized form of the PDF :
+in Eq. (12) gives the normalized form of the PDF :
 \begin{equation}
 \boxed{
 \begin{aligned}
@@ -247,168 +375,181 @@ in Eq.~(20) gives the normalized form of the PDF :
 \frac{2\pi}{
 \frac{\alpha}{c_2}
 +2\alpha^2
-e^{2\alpha h^\star}
 \left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha h^\star}
 }
 }
-\\[0.8em]
-&\quad\times
+\times
 \exp\!\left[
 -\alpha\!\left(
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 -\frac{1}{2}
-e^{2\alpha h^\star}
 \left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha h^\star}
 \right]
 \end{aligned}
 }
-\tag{20}
+\tag{28}
 \end{equation}
-where $h^\star$ is such that \(f'(h^\star,\alpha,\delta_\ell u)=0\).
 
-\vspace{0.2cm}
-This normalization ensures that
-\begin{equation}
-\langle (\delta_\ell \nu)^2 \rangle = 1,
-\tag{21}
-\end{equation}
-for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
 
 \subsection{Case A: assuming \(h^\star = c_1\)}
 
 From \((8)\),
 \begin{equation}
 f(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
-= \alpha c_1
-+ \left(\frac{\ell}{L}\right)^{4c_2}
-\frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2},
-\tag{22}
+=
+\alpha\!\left(\frac{(c_1-c_1)^2}{2c_2}-c_1\right)
++\frac{1}{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha c_1}
+=
+-\alpha c_1
++\frac{1}{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha c_1}.
+\tag{29}
 \end{equation}
-and
+
+Moreover,
 \begin{equation}
-f''(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
-= \frac{\alpha}{c_2}
-+2\alpha^2
-\left(\frac{\ell}{L}\right)^{4c_2}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}.
-\tag{23}
+\frac{\partial^2 f}{\partial h^2}(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
+=
+\frac{\alpha}{c_2}
++
+2\alpha^2
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
+e^{2\alpha c_1}
+\quad > 0,
+\tag{30}
 \end{equation}
-Plug into \((10)\):
+so we can apply the Laplace approximation.
+Equation (20) therefore becomes
+
 \begin{equation}
 \boxed{
 \begin{aligned}
 \mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
-&\approx
+\approx
 \frac{1}{2\pi\sigma}
 \sqrt{\frac{\alpha}{c_2}}\,
 \sqrt{
 \frac{2\pi}{
 \frac{\alpha}{c_2}
-+2\alpha^2
-\left(\frac{\ell}{L}\right)^{4c_2}
-\left(\tfrac{\delta_\ell \nu}{\sigma}\right)^{2}
++
+2\alpha^2
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
+e^{2\alpha c_1}
 }
 }
-\\[0.8em]
-&\quad\times
+\times
 \exp\!\left[
--\alpha c_1
--\left(\frac{\ell}{L}\right)^{4c_2}
-\frac{1}{2}\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\alpha c_1
+-
+\frac{1}{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
+e^{2\alpha c_1}
 \right]
 \end{aligned}
 }
+\tag{31}
+\end{equation}
+
+
+
+\subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)=0\) via the Lambert \(W\) function}
+
+From \((8)\),
+\begin{equation}
+\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
+=
+\alpha\!\left(\frac{h-c_1}{c_2}-1\right)
++
+\alpha
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha h}.
 \tag{24}
 \end{equation}
 
-
-\subsection{Case B: solving \(f'(h,\alpha,\delta_\ell \nu)=0\) via the Lambert \(W\) function}
-
-From \((8)\) with \(\delta_\ell u = \delta_\ell \nu (\ell/L)^{c_1+2c_2}\),
-\begin{equation}
-\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
-= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+ \alpha e^{2\alpha h}\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\tag{25}
-\end{equation}
-Set to zero:
+Setting this derivative to zero gives
 \begin{equation}
 h - (c_1 + c_2)
-= -c_2
-e^{2\alpha h}
+=
+- c_2
 \left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\tag{26}
-\end{equation}
-Multiply by \(-2\alpha e^{-2\alpha h}\):
-\begin{equation}
-(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
-= 2\alpha c_2
-e^{2\alpha(c_1 + c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\tag{27}
+e^{2\alpha h}.
+\tag{32}
 \end{equation}
 
-Using
-\[
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)} e^{2\alpha(c_1+c_2)}
-= \left(\frac{\ell}{L}\right)^{2c_2},
-\]
-let
-\[
-u = -2\alpha(h - c_1 - c_2).
-\]
-Then
+Multiplying by \(-2\alpha e^{-2\alpha h}\):
 \begin{equation}
-u e^{u}
-= 2\alpha c_2
-\left(\frac{\ell}{L}\right)^{2c_2}
+(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
+=
+2\alpha c_2
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\tag{28}
+e^{2\alpha(c_1+c_2)}.
+\tag{33}
 \end{equation}
-Hence
+
+Let
+\begin{equation}
+u = -2\alpha(h - c_1 - c_2)
+\quad\Longrightarrow\quad
+u e^{u}
+=
+2\alpha c_2
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+e^{2\alpha(c_1+c_2)}.
+\tag{34}
+\end{equation}
+
+Hence the solution is
 \begin{equation}
 \boxed{
 h^\star
-= (c_1 + c_2)
-- \frac{1}{2\alpha}
+=
+(c_1+c_2)
+-
+\frac{1}{2\alpha}
 W\!\left(
 2\alpha c_2
-\left(\frac{\ell}{L}\right)^{2c_2}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
+e^{2\alpha(c_1+c_2)}
 \right)
 }
-\tag{29}
+\tag{35}
 \end{equation}
 
-We then just need to plug $h^\star$ in Eq (20).
+Finally, inserting this value of \(h^\star\) into Eq.(28) yields the full Laplace-approximated normalized PDF.
 
 
 
+\section{Entropy of the normalized PDF}
 
-\subsection{Visualization of the obtained PDF for different $\ell/L$}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.64\textwidth]{image.png} % 80% of previous size
-    \caption{Probability density functions \(\mathcal{P}_{\delta_\ell u}(\nu)\)
-    for different values of \(\ell/L\), compared with a standard Gaussian \(N(0,1)\).}
-    \label{fig:pdfplot}
-\end{figure}
-
-To illustrate the influence of the scale ratio \(\ell/L\),
-Figure~\thefigure\ shows the PDFs
-\(\mathcal{P}_{\delta_\ell u}(\nu)\) as a function of \(\nu\)
-for several values of \(\ell/L\).
-As \(\ell/L\) decreases, the distributions become more peaked and develop heavier tails.
-
-
-
+We now compute the Shannon entropy of the normalized increment PDF
+\(\mathcal{P}_{\delta_\ell \nu}\) obtained in Eq. (28). By definition,
+\begin{equation}
+S(\delta_\ell \nu)
+=
+- \int_{-\infty}^{+\infty}
+\mathcal{P}_{\delta_\ell \nu}(x)\,
+\ln\!\bigl[\mathcal{P}_{\delta_\ell \nu}(x)\bigr]\,
+\mathrm{d}x
+\tag{36}
+\end{equation}
 
 
 
