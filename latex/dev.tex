@@ -179,8 +179,8 @@ e^{2\alpha h^\star}
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 -\frac{1}{2}
-e^{2\alpha h^\star}
 \left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+e^{2\alpha h^\star}
 \right]
 \end{aligned}
 }
@@ -258,18 +258,16 @@ h - (c_1 + c_2)
 e^{2\alpha h}
 \tag{17}
 \end{equation}
-Multiply by \(-2\alpha e^{-2\alpha h}\):
+Multiply by \(-2\alpha\) and let \(u=-2\alpha(h-c_1-c_2)\):
 \begin{equation}
-(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
+u
 = 2\alpha c_2
 \left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha(c_1 + c_2)}
+e^{2\alpha(c_1 + c_2)-u}
 \tag{18}
 \end{equation}
-Let
+Consequently
 \begin{equation}
-u = -2\alpha(h - c_1 - c_2)
-\quad\Longrightarrow\quad
 u e^{u}
 = 2\alpha c_2
 \left(\frac{\delta_\ell u}{\sigma}\right)^{2}
@@ -316,19 +314,20 @@ the minimization of Eq.~(21) gives
 \begin{equation}
 \frac{\mathrm{d}}{\mathrm{d}h}
 \bigl[p h + 1 - \mathcal{D}^E(h)\bigr] = 0
-\quad\Longrightarrow\quad
-p = \frac{h - c_1}{c_2}.
+\quad i.e. \quad
+\frac{\mathrm{d}}{\mathrm{d}h}
+\bigl[p h + \frac{(h-c_1)^2}{2c_2}\bigr] = 0
 \tag{22}
 \end{equation}
 
 Hence, the minimizing exponent is
 \begin{equation}
-h_p = c_1 + p c_2,
+h_p = c_1 - p c_2,
 \tag{23}
 \end{equation}
 and inserting this value into Eq.~(21) gives
 \begin{equation}
-\zeta_p = p c_1 + c_2 p^2.
+\zeta_p = p c_1 - \frac{p^2}{2} c_2
 \tag{24}
 \end{equation}
 
@@ -337,7 +336,7 @@ In particular, for the second-order moment ($p=2$):
 \boxed{
 \langle (\delta_\ell u)^2 \rangle
 \sim
-\left( \frac{\ell}{L} \right)^{2c_1 + 4c_2}.
+\ell^{2(c_1 - c_2)}.
 }
 \tag{25}
 \end{equation}
@@ -347,8 +346,7 @@ We now define a normalized increment
 \boxed{
 \delta_\ell \nu
 = \frac{\delta_\ell u}{\sqrt{\langle (\delta_\ell u)^2 \rangle}}
-= \delta_\ell u
-\left( \frac{L}{\ell} \right)^{c_1 + 2c_2}.
+= \frac{\delta_\ell u}{\ell^{c_1 - c_2}}
 }
 \tag{26}
 \end{equation}
@@ -362,22 +360,17 @@ This normalization ensures that
 for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
 
 $\\[0.1em]$
-Replacing $\delta_\ell u = \delta_\ell \nu\, (\ell/L)^{c_1 + 2c_2}$
+Replacing $\delta_\ell u = \delta_\ell \nu\, \ell^{c_1 - c_2}$
 in Eq. (12) gives the normalized form of the PDF :
 \begin{equation}
 \boxed{
 \begin{aligned}
 \mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
-&\approx
-\frac{1}{2\pi\sigma}
-\sqrt{\frac{\alpha}{c_2}}\,
+\approx
+\frac{1}{\sqrt{2\pi}}
+\frac{1}{
 \sqrt{
-\frac{2\pi}{
-\frac{\alpha}{c_2}
-+2\alpha^2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha h^\star}
+2c_2 \alpha \ell^{2(c_1 - c_2)} e^{2\alpha h^\star} {\delta_\ell \nu}^2 + \sigma^2
 }
 }
 \times
@@ -385,10 +378,11 @@ e^{2\alpha h^\star}
 -\alpha\!\left(
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
--\frac{1}{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha h^\star}
+- \frac{1}{2}
+\left(\frac{
+\delta_\ell \nu
+}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)} e^{2\alpha h^\star}
 \right]
 \end{aligned}
 }
@@ -396,67 +390,52 @@ e^{2\alpha h^\star}
 \end{equation}
 
 
+
 \subsection{Case A: assuming \(h^\star = c_1\)}
 
-From \((8)\),
+As a first approximation, we can consider that :
+
 \begin{equation}
-f(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
-=
-\alpha\!\left(\frac{(c_1-c_1)^2}{2c_2}-c_1\right)
-+\frac{1}{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha c_1}
-=
--\alpha c_1
-+\frac{1}{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha c_1}.
+\frac{\partial f}{\partial h}(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
+= 0
 \tag{29}
 \end{equation}
 
-Moreover,
+And since
+
 \begin{equation}
 \frac{\partial^2 f}{\partial h^2}(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
-=
-\frac{\alpha}{c_2}
-+
-2\alpha^2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
+= \frac{\alpha}{c_2}
++2\alpha^2
+\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
 e^{2\alpha c_1}
-\quad > 0,
+\quad > 0
 \tag{30}
 \end{equation}
-so we can apply the Laplace approximation.
-Equation (20) therefore becomes
+
+We can use the Laplace approximation. Eq(28) then becomes :
 
 \begin{equation}
 \boxed{
 \begin{aligned}
 \mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
 \approx
-\frac{1}{2\pi\sigma}
-\sqrt{\frac{\alpha}{c_2}}\,
+\frac{1}{\sqrt{2\pi}}
+\frac{1}{
 \sqrt{
-\frac{2\pi}{
-\frac{\alpha}{c_2}
-+
-2\alpha^2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
+2c_2\alpha\,
+\ell^{2(c_1 - c_2)}
 e^{2\alpha c_1}
+(\delta_\ell \nu)^2
++\sigma^2
 }
 }
 \times
 \exp\!\left[
 \alpha c_1
--
-\frac{1}{2}
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
-e^{2\alpha c_1}
+-\frac{1}{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)} e^{2\alpha c_1}
 \right]
 \end{aligned}
 }
@@ -470,70 +449,87 @@ e^{2\alpha c_1}
 From \((8)\),
 \begin{equation}
 \frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
-=
-\alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+
-\alpha
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha h}.
-\tag{24}
-\end{equation}
-
-Setting this derivative to zero gives
-\begin{equation}
-h - (c_1 + c_2)
-=
-- c_2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha h}.
+= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
++ \alpha\!\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+e^{2\alpha h}
 \tag{32}
 \end{equation}
 
-Multiplying by \(-2\alpha e^{-2\alpha h}\):
+Set to zero:
 \begin{equation}
-(-2\alpha)(h - c_1 - c_2)e^{-2\alpha h}
-=
-2\alpha c_2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha(c_1+c_2)}.
+h - (c_1 + c_2)
+= -c_2
+\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+e^{2\alpha h}
 \tag{33}
 \end{equation}
 
-Let
+Multiply by \(-2\alpha\) and let \(u=-2\alpha(h-c_1-c_2)\):
 \begin{equation}
-u = -2\alpha(h - c_1 - c_2)
-\quad\Longrightarrow\quad
-u e^{u}
-=
-2\alpha c_2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-e^{2\alpha(c_1+c_2)}.
+u
+= 2\alpha c_2
+\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)-u}
 \tag{34}
 \end{equation}
 
-Hence the solution is
+Consequently
 \begin{equation}
-\boxed{
-h^\star
-=
-(c_1+c_2)
--
-\frac{1}{2\alpha}
-W\!\left(
-2\alpha c_2
-\left(\frac{\ell}{L}\right)^{2(c_1+2c_2)}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^2
-e^{2\alpha(c_1+c_2)}
-\right)
-}
+u e^{u}
+= 2\alpha c_2
+\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}
 \tag{35}
 \end{equation}
 
-Finally, inserting this value of \(h^\star\) into Eq.(28) yields the full Laplace-approximated normalized PDF.
+Hence
+\begin{equation}
+\boxed{
+h^\star
+= (c_1 + c_2)
+- \frac{1}{2\alpha}
+W\!\left(
+2\alpha c_2
+\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+e^{2\alpha(c_1 + c_2)}
+\right)
+}
+\tag{36}
+\end{equation}
+
+We can now plug the obtained $h^\star$ into Eq(28), which yields :
+
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
+\approx
+\frac{1}{\sqrt{2\pi}}
+\frac{1}{
+\sqrt{
+2c_2 \alpha\,
+\ell^{2(c_1 - c_2)}
+e^{2\alpha h^\star}
+(\delta_\ell \nu)^2 + \sigma^2
+}
+}
+\times
+\exp\!\left[
+-\alpha\!\left(
+\frac{(h^\star-c_1)^2}{2c_2}-h^\star
+\right)
+-
+\frac{1}{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)}
+e^{2\alpha h^\star}
+\right]
+\end{aligned}
+}
+\tag{37}
+\end{equation}
+
+
 
 
 
