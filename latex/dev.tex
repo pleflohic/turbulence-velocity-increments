@@ -424,8 +424,7 @@ We can use the Laplace approximation. Eq(28) then becomes :
 \frac{1}{
 \sqrt{
 2c_2\alpha\,
-\ell^{2(c_1 - c_2)}
-e^{2\alpha c_1}
+\left(\frac{L^{c_1}}{\ell^{c_2}}\right)^{2}
 (\delta_\ell \nu)^2
 +\sigma^2
 }
@@ -434,8 +433,8 @@ e^{2\alpha c_1}
 \exp\!\left[
 \alpha c_1
 -\frac{1}{2}
+\left(\frac{L^{c_1}}{\ell^{c_2}}\right)^{2}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_1 - c_2)} e^{2\alpha c_1}
 \right]
 \end{aligned}
 }
@@ -450,7 +449,8 @@ From \((8)\),
 \begin{equation}
 \frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
 = \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+ \alpha\!\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
++ \alpha\!\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)}
 e^{2\alpha h}
 \tag{32}
 \end{equation}
@@ -459,7 +459,8 @@ Set to zero:
 \begin{equation}
 h - (c_1 + c_2)
 = -c_2
-\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)}
 e^{2\alpha h}
 \tag{33}
 \end{equation}
@@ -468,7 +469,8 @@ Multiply by \(-2\alpha\) and let \(u=-2\alpha(h-c_1-c_2)\):
 \begin{equation}
 u
 = 2\alpha c_2
-\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)}
 e^{2\alpha(c_1 + c_2)-u}
 \tag{34}
 \end{equation}
@@ -477,12 +479,27 @@ Consequently
 \begin{equation}
 u e^{u}
 = 2\alpha c_2
-\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)}
 e^{2\alpha(c_1 + c_2)}
 \tag{35}
 \end{equation}
 
 Hence
+\begin{equation}
+h^\star
+= (c_1 + c_2)
+- \frac{1}{2\alpha}
+W\!\left(
+2\alpha c_2
+\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+\ell^{2(c_1 - c_2)}
+e^{2\alpha(c_1 + c_2)}
+\right)
+\tag{36}
+\end{equation}
+
+i.e.
 \begin{equation}
 \boxed{
 h^\star
@@ -490,45 +507,14 @@ h^\star
 - \frac{1}{2\alpha}
 W\!\left(
 2\alpha c_2
-\left(\frac{\delta_\ell \nu\,\ell^{c_1 - c_2}}{\sigma}\right)^{2}
-e^{2\alpha(c_1 + c_2)}
-\right)
-}
-\tag{36}
-\end{equation}
-
-We can now plug the obtained $h^\star$ into Eq(28), which yields :
-
-\begin{equation}
-\boxed{
-\begin{aligned}
-\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
-\approx
-\frac{1}{\sqrt{2\pi}}
-\frac{1}{
-\sqrt{
-2c_2 \alpha\,
-\ell^{2(c_1 - c_2)}
-e^{2\alpha h^\star}
-(\delta_\ell \nu)^2 + \sigma^2
-}
-}
-\times
-\exp\!\left[
--\alpha\!\left(
-\frac{(h^\star-c_1)^2}{2c_2}-h^\star
-\right)
--
-\frac{1}{2}
+\left(\frac{L^{c_1 + c_2}}{\ell^{2c_2}}\right)^{2}
 \left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_1 - c_2)}
-e^{2\alpha h^\star}
-\right]
-\end{aligned}
+\right)
 }
 \tag{37}
 \end{equation}
 
+We can now plug the obtained $h^\star$ into Eq(28).
 
 
 
