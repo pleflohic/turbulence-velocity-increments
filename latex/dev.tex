@@ -10,6 +10,16 @@
 \date{}
 \maketitle
 
+\begin{abstract}
+\normalsize
+
+We study the probability density functions (PDFs) of Eulerian velocity increments in fully developed turbulence. The work is based on the multifractal propagator formalism and follows the phenomenological framework of Chevillard \emph{et al.} We focus on the Kolmogorov--Oboukhov log-normal model. In this picture, large-scale velocity fluctuations are Gaussian, while intermittency enters through a distribution of local Hölder exponents. These ingredients are coupled by a scale-dependent propagator, from which explicit expressions for the increment PDFs are derived as integrals over the Hölder exponent.
+
+The PDFs of the increments are written as integrals over the Hölder exponent, which cannot be evaluated in closed form. We therefore study their asymptotic behavior in the inertial-range limit of small scale separation using Laplace’s method. Two saddle-point approximations are examined. In the first one, the dominant Hölder exponent is assumed to be fixed. In the second one, the saddle point is obtained exactly by solving the stationarity condition with the Lambert \(W\) function. Both approximations are compared with direct numerical evaluations of the full propagator integral.
+
+We also introduce a scale-dependent normalization based on the second-order structure function. This normalization allows a direct comparison of PDFs at different scales and separates variance scaling from genuine intermittency effects. Numerical results obtained from Julia notebooks show the evolution of the PDF shapes with scale, including logarithmic representations. At small scales, the Laplace approximation captures the dominant behavior of the full propagator. The remaining discrepancies quantify the limits of the reduced assumptions and clarify the range of validity of asymptotic treatments in the propagator framework, providing a controlled basis for subsequent entropy-based analyses of intermittency.
+\end{abstract}
+
 \section{Starting point: the distribution of $h$}
 
 We start from Equation~(11) of~[1], which defines the probability density function of the local Hölder exponent \(h\):
