@@ -298,12 +298,12 @@ We can now plug the obtained $h^\star$ into Eq(12).
 
 \section{Normalized PDF}
 
-The $p$-th order moment of the velocity increment
+According to Eq 12 of Chevillard et al., the $p$-th order moment of the velocity increment
 is expressed as
 \begin{equation}
-\langle |\delta_\ell u|^p \rangle \sim \ell^{\zeta_p},
+\langle |\delta_\ell u|^p \rangle \underset{\ell \to 0}{\approx} \sigma^2 \langle |\delta|^p \rangle \left(\frac{\ell}{L}\right)^{\zeta_p},
 \quad\text{with}\quad
-\zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr].
+\zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr] \quad\text{and}\quad \delta \sim \mathcal{N}(0,1).
 \tag{21}
 \end{equation}
 
@@ -333,14 +333,20 @@ and inserting this value into Eq.~(21) gives
 \tag{24}
 \end{equation}
 
-In particular, for the second-order moment ($p=2$):
+In particular, for the second-order :
+\begin{equation}
+\zeta_2 = 2(c_1 - c_2)
+\tag{25}
+\end{equation}
+
+Knowing that $\langle |\delta|^2 \rangle = 1$, we get :
 \begin{equation}
 \boxed{
 \langle (\delta_\ell u)^2 \rangle
-\sim
-\ell^{2(c_1 - c_2)}.
+\underset{\ell \to 0}{\approx}
+\sigma^2 \left( \frac{\ell}{L} \right)^{2(c_1 - c_2)}.
 }
-\tag{25}
+\tag{26}
 \end{equation}
 
 We now define a normalized increment
@@ -348,25 +354,26 @@ We now define a normalized increment
 \boxed{
 \delta_\ell \nu
 = \frac{\delta_\ell u}{\sqrt{\langle (\delta_\ell u)^2 \rangle}}
-= \frac{\delta_\ell u}{\ell^{c_1 - c_2}}
+= \frac{\delta_\ell u}{\sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2}}
 }
-\tag{26}
+\tag{27}
 \end{equation}
 
 $\\[0.3em]$
 This normalization ensures that
 \begin{equation}
 \langle (\delta_\ell \nu)^2 \rangle = 1,
-\tag{27}
+\tag{28}
 \end{equation}
 for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
 
 $\\[0.1em]$
-We can define $\delta_\ell \nu\ = \delta_\ell u / \ell^{c_1 - c_2} = g(\delta_\ell u)$ where $g(x)=\frac{x}{\ell^{c_1 - c_2}}$ is monoton and differentiable.
+We thus have $\delta_\ell \nu\ = \delta_\ell u / \sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2} = g(\delta_\ell u)$ where $g(x) = x / \sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2}$ is monoton and differentiable.
 
 
 $\\[0.1em]$
-Knowing that $\mathcal{P}_{\delta_\ell \nu}(y) = \left| \frac{1}{g'(g^{-1}(y))} \right| \mathcal{P}_{\delta_\ell u}(g^{-1}(y))$, we have $\mathcal{P}_{\delta_\ell \nu}(y) = \ell^{c_2 - c_1}\mathcal{P}_{\delta_\ell u}(\ell^{c_1 - c_2}y)$.
+Knowing that : $\mathcal{P}_{\delta_\ell \nu}(y) = \left| \frac{1}{g'(g^{-1}(y))} \right| \mathcal{P}_{\delta_\ell u}(g^{-1}(y))$
+, we have : $\mathcal{P}_{\delta_\ell \nu}(y) = \sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2} \mathcal{P}_{\delta_\ell u}(\sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2}y)$
 
 $\\[0.1em]$
 We then obtain from Eq (12) the normalized form of the PDF :
@@ -376,10 +383,10 @@ We then obtain from Eq (12) the normalized form of the PDF :
 \begin{aligned}
 \mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
 \approx
-\frac{\ell^{c_2 - c_1}}{
+\frac{\left( \frac{\ell}{L} \right)^{c_1 - c_2}}{
 \sqrt{2\pi}
 \sqrt{
-2c_2 \alpha \ell^{2(c_1 - c_2)} {\delta_\ell \nu}^2 e^{2\alpha h^\star} + \sigma^2
+2c_2 \alpha \left( \frac{\ell}{L} \right)^{2(c_1 - c_2)} {\delta_\ell \nu}^2 e^{2\alpha h^\star} + 1
 }
 }
 \times
@@ -388,10 +395,8 @@ We then obtain from Eq (12) the normalized form of the PDF :
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 - \frac{1}{2}
-\ell^{2(c_1 - c_2)}
-\left(\frac{
-\delta_\ell \nu
-}{\sigma}\right)^{2}
+\left( \frac{\ell}{L} \right)^{2(c_1 - c_2)}
+\delta_\ell \nu^{2}
 e^{2\alpha h^\star}
 \right]
 \end{aligned}
