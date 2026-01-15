@@ -55,10 +55,12 @@ we obtain
 \end{equation}
 
 To simplify notation, we define
+
 \begin{equation}
 \alpha = -\ln\!\left(\frac{\ell}{L}\right) > 0.
 \tag{3}
 \end{equation}
+
 Then the expression becomes
 \begin{equation}
 \mathcal{P}_h^{(\ell)}(h)
@@ -80,6 +82,7 @@ e^{-\frac{\alpha}{2c_2}(h - c_1)^2}\mathrm{d}h
 = \sqrt{\frac{2\pi c_2}{\alpha}}.
 \tag{5}
 \end{equation}
+
 Hence,
 \begin{equation}
 \boxed{
@@ -97,18 +100,19 @@ Hence,
 
 We now consider the probability density function of velocity increments:
 \begin{equation}
-\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+\mathcal{P}_{\delta_\ell u}(x)
 = \frac{1}{2\pi\sigma}\,
 \sqrt{\frac{\alpha}{c_2}}
 \int_{-\infty}^{+\infty}
-\exp[-f(h,\alpha,\delta_\ell u)]\,\mathrm{d}h.
+\exp[-f(h,\alpha,x)]\,\mathrm{d}h.
 \tag{7}
 \end{equation}
+
 with
 \begin{equation}
-f(h,\alpha,\delta_\ell u)
+f(h,\alpha,x)
 = \alpha\!\left(\frac{(h-c_1)^2}{2c_2}-h\right)
-+ \frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
++ \frac{1}{2}\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha h}
 \tag{8}
 \end{equation}
@@ -136,18 +140,29 @@ Knowing that
 \begin{equation}
 \forall h \in \mathbf{R},
 \quad
-\frac{\partial^2 f}{\partial h^2}(h,\alpha,\delta_\ell u)
+\frac{\partial f}{\partial h}(h,\alpha,x)
+= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
++ \alpha\!\left(\frac{x}{\sigma}\right)^{2}
+e^{2\alpha h}
+\tag{9}
+\end{equation}
+
+we have :
+\begin{equation}
+\forall h \in \mathbf{R},
+\quad
+\frac{\partial^2 f}{\partial h^2}(h,\alpha,x)
 =
 \frac{\alpha}{c_2}
 + 2\alpha^2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha h}
 \quad > 0
-\tag{11}
+\tag{10}
 \end{equation}
 
-we just need to verify that $h^\star$ is such that
-$\frac{\partial f}{\partial h}(h^\star,\alpha,\delta_\ell u) = 0$
+We just need to verify that $h^\star$ is such that
+$\frac{\partial f}{\partial h}(h^\star,\alpha,x) = 0$
 to be able to use Laplace approximation.
 
 $\\[0.3em]$
@@ -155,14 +170,14 @@ In this case, by applying the approximation to Eq (7), we get :
 
 \begin{equation}
 \boxed{
-\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+\mathcal{P}_{\delta_\ell u}(x)
 \approx
-\frac{1}{2\pi\sigma}
-\sqrt{\frac{\alpha}{c_2}}\,
-\sqrt{\frac{2\pi}{\frac{\partial^2 f}{\partial h^2}(h,\alpha,\delta_\ell u))}}\,
-\exp[-f(h^\star,\alpha,\delta_\ell u)].
+\sqrt{\frac{\alpha}{
+2\pi c_2 \sigma^2 \frac{\partial^2 f}{\partial h^2}(h,\alpha,x))
+}}\,
+\exp[-f(h^\star,\alpha,x)].
 }
-\tag{10}
+\tag{11}
 \end{equation}
 
 
@@ -171,21 +186,21 @@ i.e
 \begin{equation}
 \boxed{
 \begin{aligned}
-\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+\mathcal{P}_{\delta_\ell u}(x)
 \approx
-\frac{1}{\sqrt{2\pi}}
 \frac{1}
 {
+\sqrt{2\pi}
 \sqrt{
-2\alpha c_{2} (\delta_{\ell} u)^{2} e^{2\alpha h^{\star}}
-+ \sigma^{2}}}
+2\alpha c_2 x^2 e^{2\alpha h^{\star}}
++ \sigma^2}}
 \times
 \exp\!\left[
 -\alpha\!\left(
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 -\frac{1}{2}
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha h^\star}
 \right]
 \end{aligned}
@@ -199,82 +214,69 @@ e^{2\alpha h^\star}
 As a first approximation, we can consider that :
 
 \begin{equation}
-\frac{\partial f}{\partial h}(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
+\frac{\partial f}{\partial h}(h^\star,\alpha,x)\Big|_{h^\star=c_1}
 = 0
 \tag{13}
 \end{equation}
 
 $\\[0.1em]$
-And since
-
-\begin{equation}
-\frac{\partial^2 f}{\partial h^2}(h^\star,\alpha,\delta_\ell u)\Big|_{h^\star=c_1}
-= \frac{\alpha}{c_2}
-+2\alpha^2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
-e^{2\alpha c_1}
-\quad > 0
-\tag{14}
-\end{equation}
-
-$\\[0.3em]$
-We can use the Laplace approximation. Eq(12) then becomes :
+We can use the Laplace approximation given by Eq(12), which becomes :
 
 \begin{equation}
 \boxed{
 \begin{aligned}
-\mathcal{P}_{\delta_\ell u}(\delta_\ell u)
+\mathcal{P}_{\delta_\ell u}(x)
 \approx
 \frac{1}{\sqrt{2\pi}}
 \frac{1}
 {
 \sqrt{
-2\alpha c_{2} (\delta_{\ell} u)^{2} e^{2\alpha c_{1}}
+2\alpha c_2 x^2 e^{2\alpha c_{1}}
 + \sigma^{2}}}
 \times
 \exp\!\left[
 \alpha c_1
--\frac{1}{2}\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+-\frac{1}{2}\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha c_1}
 \right]
 \end{aligned}
 }
-\tag{15}
+\tag{14}
 \end{equation}
 
-\subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell u)=0\) via the Lambert \(W\) function}
+\subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,x)=0\) via the Lambert \(W\) function}
 
 From \((8)\),
 \begin{equation}
-\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell u)
+\frac{\partial f}{\partial h}(h,\alpha,x)
 = \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+ \alpha\!\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
++ \alpha\!\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha h}
-\tag{16}
+\tag{15}
 \end{equation}
 Set to zero:
 \begin{equation}
 h - (c_1 + c_2)
 = -c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha h}
-\tag{17}
+\tag{16}
 \end{equation}
 Multiply by \(-2\alpha\) and let \(u=-2\alpha(h-c_1-c_2)\):
 \begin{equation}
 u
 = 2\alpha c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha(c_1 + c_2)-u}
-\tag{18}
+\tag{17}
 \end{equation}
 Consequently
 \begin{equation}
 u e^{u}
 = 2\alpha c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha(c_1 + c_2)}
-\tag{19}
+\tag{18}
 \end{equation}
 Hence
 \begin{equation}
@@ -284,11 +286,11 @@ h^\star
 - \frac{1}{2\alpha}
 W\!\left(
 2\alpha c_2
-\left(\frac{\delta_\ell u}{\sigma}\right)^{2}
+\left(\frac{x}{\sigma}\right)^{2}
 e^{2\alpha(c_1 + c_2)}
 \right)
 }
-\tag{20}
+\tag{19}
 \end{equation}
 where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
 
@@ -304,15 +306,16 @@ is expressed as
 \langle |\delta_\ell u|^p \rangle \underset{\ell \to 0}{\approx} \sigma^2 \langle |\delta|^p \rangle \left(\frac{\ell}{L}\right)^{\zeta_p},
 \quad\text{with}\quad
 \zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr] \quad\text{and}\quad \delta \sim \mathcal{N}(0,1).
-\tag{21}
+\tag{20}
 \end{equation}
 
 Using the Kolmogorov–Oboukhov log-normal spectrum
 \begin{equation}
 \mathcal{D}^E(h) = 1 - \frac{(h - c_1)^2}{2c_2},
-\tag{14}
+\tag{21}
 \end{equation}
-the minimization of Eq.~(21) gives
+
+the minimization problem is
 \begin{equation}
 \frac{\mathrm{d}}{\mathrm{d}h}
 \bigl[p h + 1 - \mathcal{D}^E(h)\bigr] = 0
@@ -327,7 +330,7 @@ Hence, the minimizing exponent is
 h_p = c_1 - p c_2,
 \tag{23}
 \end{equation}
-and inserting this value into Eq.~(21) gives
+and inserting this value into Eq.~(20) gives
 \begin{equation}
 \zeta_p = p c_1 - \frac{p^2}{2} c_2
 \tag{24}
@@ -372,8 +375,16 @@ We thus have $\delta_\ell \nu\ = \delta_\ell u / \sigma \left( \frac{\ell}{L} \r
 
 
 $\\[0.1em]$
-Knowing that : $\mathcal{P}_{\delta_\ell \nu}(y) = \left| \frac{1}{g'(g^{-1}(y))} \right| \mathcal{P}_{\delta_\ell u}(g^{-1}(y))$
-, we have : $\mathcal{P}_{\delta_\ell \nu}(y) = \sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2} \mathcal{P}_{\delta_\ell u}(\sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2}y)$
+Knowing that : $\mathcal{P}_{\delta_\ell \nu}(x) = \left| \frac{1}{g'(g^{-1}(x))} \right| \mathcal{P}_{\delta_\ell u}(g^{-1}(x))$
+, we have : $\mathcal{P}_{\delta_\ell \nu}(x) = \sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2} \mathcal{P}_{\delta_\ell u}(\sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2}x)$
+i.e.
+
+\begin{equation}
+\boxed{
+\mathcal{P}_{\delta_\ell \nu}(x) = \sigma e^{\alpha (c_2 - c_1)} \mathcal{P}_{\delta_\ell u}(\sigma e^{\alpha (c_2 - c_1)}x)
+}
+\tag{29}
+\end{equation}
 
 $\\[0.1em]$
 We then obtain from Eq (12) the normalized form of the PDF :
@@ -381,12 +392,12 @@ We then obtain from Eq (12) the normalized form of the PDF :
 \begin{equation}
 \boxed{
 \begin{aligned}
-\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
+\mathcal{P}_{\delta_\ell \nu}(x)
 \approx
-\frac{\left( \frac{\ell}{L} \right)^{c_1 - c_2}}{
+\frac{e^{\alpha(c_2 - c_1)}}{
 \sqrt{2\pi}
 \sqrt{
-2c_2 \alpha \left( \frac{\ell}{L} \right)^{2(c_1 - c_2)} {\delta_\ell \nu}^2 e^{2\alpha h^\star} + 1
+2 \alpha c_2 x^2 e^{2\alpha (h^\star + c_2 - c_1)} + 1
 }
 }
 \times
@@ -395,63 +406,43 @@ We then obtain from Eq (12) the normalized form of the PDF :
 \frac{(h^\star-c_1)^2}{2c_2}-h^\star
 \right)
 - \frac{1}{2}
-\left( \frac{\ell}{L} \right)^{2(c_1 - c_2)}
-\delta_\ell \nu^{2}
-e^{2\alpha h^\star}
+x^{2}
+e^{2\alpha (h^\star + c_2 - c_1)}
 \right]
 \end{aligned}
 }
-\tag{28}
+\tag{30}
 \end{equation}
 
+which is valid if $h^\star$ is such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0$.
 
 
 \subsection{Case A: assuming \(h^\star = c_1\)}
 
-As a first approximation, we can consider that :
-
-\begin{equation}
-\frac{\partial f}{\partial h}(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
-= 0
-\tag{29}
-\end{equation}
-
-And since
-
-\begin{equation}
-\frac{\partial^2 f}{\partial h^2}(h^\star,\alpha,\delta_\ell \nu)\Big|_{h^\star=c_1}
-= \frac{\alpha}{c_2}
-+2\alpha^2
-\left(\frac{\delta_\ell \nu\,\ell^{c_2 - c_1}}{\sigma}\right)^{2}
-e^{2\alpha c_1}
-\quad > 0
-\tag{30}
-\end{equation}
-
-We can use the Laplace approximation. Eq(28) then becomes :
+If we consider that
+$\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)} x)\Big|_{h^\star=c_1} = 0$,
+then we get from Eq (30) :
 
 \begin{equation}
 \boxed{
 \begin{aligned}
-\mathcal{P}_{\delta_\ell \nu}(\delta_\ell \nu)
+\mathcal{P}_{\delta_\ell \nu}(x)
 \approx
-\frac{1}{\sqrt{2\pi}}
 \frac{1}{
+\sqrt{2\pi}
 \sqrt{
-2c_2\alpha\,
-\ell^{2c_{2}-4c_{1}}
-L^{2c_{1}}
-(\delta_\ell \nu)^2
-+\sigma^2
+2 \alpha c_2\,
+x^2
+e^{2\alpha c_2}
++ 1
 }
 }
 \times
 \exp\!\left[
-\alpha c_1
+\alpha c_2
 -\frac{1}{2}
-\ell^{2c_{2}-4c_{1}}
-L^{2c_{1}}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+x^2
+e^{2\alpha c_2}
 \right]
 \end{aligned}
 }
@@ -460,78 +451,51 @@ L^{2c_{1}}
 
 
 
-\subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)=0\) via the Lambert \(W\) function}
+\subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0\) via the Lambert \(W\) function}
 
-From \((8)\),
-\begin{equation}
-\frac{\partial f}{\partial h}(h,\alpha,\delta_\ell \nu)
-= \alpha\!\left(\frac{h-c_1}{c_2}-1\right)
-+ \alpha\!\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_2 - c_1)}
-e^{2\alpha h}
-\tag{32}
-\end{equation}
+We want to find \(h^\star\) such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)}x) = 0$.
+In Eq(19), by considering that \(h^\star\) is a function of x, we just need to replace x by \( \sigma e^{\alpha (c_2-c_1)} x\). We get :
 
-Set to zero:
-\begin{equation}
-h - (c_1 + c_2)
-= -c_2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_2 - c_1)}
-e^{2\alpha h}
-\tag{33}
-\end{equation}
-
-Multiply by \(-2\alpha\) and let \(u=-2\alpha(h-c_1-c_2)\):
-\begin{equation}
-u
-= 2\alpha c_2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_2 - c_1)}
-e^{2\alpha(c_1 + c_2)-u}
-\tag{34}
-\end{equation}
-
-Consequently
-\begin{equation}
-u e^{u}
-= 2\alpha c_2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_2 - c_1)}
-e^{2\alpha(c_1 + c_2)}
-\tag{35}
-\end{equation}
-
-Hence
-\begin{equation}
-h^\star
-= (c_1 + c_2)
-- \frac{1}{2\alpha}
-W\!\left(
-2\alpha c_2
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
-\ell^{2(c_2 - c_1)}
-e^{2\alpha(c_1 + c_2)}
-\right)
-\tag{36}
-\end{equation}
-
-i.e.
 \begin{equation}
 \boxed{
 h^\star
 = (c_1 + c_2)
 - \frac{1}{2\alpha}
 W\!\left(
-2\alpha c_2
-\left(\frac{L^{c_1 + c_2}}{\ell^{2c_1}}\right)^{2}
-\left(\frac{\delta_\ell \nu}{\sigma}\right)^{2}
+2\alpha c_2 x^2 e^{4\alpha c_2}
 \right)
 }
-\tag{37}
+\tag{32}
 \end{equation}
 
-We can now plug the obtained $h^\star$ into Eq(28).
+We can now plug the obtained $h^\star$ into Eq(28). Let $W=W\!\left( 2\alpha c_2 x^2 e^{4\alpha c_2} \right)$. We get :
+
+\begin{equation}
+\boxed{
+\mathcal{P}_{\delta_\ell \nu}(x)
+\approx
+\frac{1}{
+\sqrt{2\pi}\sqrt{2 \alpha c_2 x^2 e^{4 \alpha c_2-W} + 1}}
+\times
+\exp\left[
+-\frac{\alpha}{2} \left( \frac{1}{c_2} \left( \frac{W}{2\alpha} \right)^2 - 3c_2 \right)
+-\frac{1}{2} x^2 e^{4 \alpha c_2 - W}
+\right]
+}
+\tag{33}
+\end{equation}
+
+i.e.
+
+\begin{equation}
+\boxed{
+\mathcal{P}_{\delta_\ell \nu}(x)
+\approx
+\frac{e^\frac{3}{2}c_2 \alpha}{\sqrt{2\pi}}
+\frac{e^{-\frac{2W + W^2}{8c_2 \alpha}}}{\sqrt{1+W}}
+}
+\tag{34}
+\end{equation}
 
 
 
@@ -547,7 +511,7 @@ S(\delta_\ell \nu)
 \mathcal{P}_{\delta_\ell \nu}(x)\,
 \ln\!\bigl[\mathcal{P}_{\delta_\ell \nu}(x)\bigr]\,
 \mathrm{d}x
-\tag{36}
+\tag{35}
 \end{equation}
 
 
