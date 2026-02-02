@@ -22,7 +22,7 @@ We also introduce a scale-dependent normalization based on the second-order stru
 
 \section{Starting point: the distribution of $h$}
 
-We start from Equation~(11) of~[1], which defines the probability density function of the local Hölder exponent \(h\):
+We start from (Chevillard et al., 2012, Eq.~11), which defines the probability density function of the local Hölder exponent \(h\):
 \begin{equation}
 \mathcal{P}_h^{(\ell)}(h)
 =
@@ -35,7 +35,7 @@ We start from Equation~(11) of~[1], which defines the probability density functi
 \tag{1}
 \end{equation}
 
-Using the Kolmogorov–Oboukhov log-normal spectrum
+using the Kolmogorov–Oboukhov log-normal spectrum
 \[
 \mathcal{D}^E(h)=1-\frac{(h-c_1)^2}{2c_2},
 \]
@@ -98,7 +98,7 @@ Hence,
 
 \subsection{General form of the PDF}
 
-We now consider the probability density function of velocity increments:
+We now consider the probability density function of velocity increments. According to (Chevillard et al., 2012, Eq.~17) :
 \begin{equation}
 \mathcal{P}_{\delta_\ell u}(x)
 = \frac{1}{2\pi\sigma}\,
@@ -117,25 +117,10 @@ e^{2\alpha h}
 \tag{8}
 \end{equation}
 
-\paragraph{Laplace approximation}
-Let $I=[a,b]$ be an interval, $\varphi\in C^2(I,\mathbb{R})$
-and $g\in C^0(I,\mathbb{C})$. Assume that:
-\begin{enumerate}
-    \item[(i)] For all $t>0$, $\displaystyle \int_a^b e^{t\varphi(x)} |g(x)|\,dx < +\infty$;
-    \item[(ii)] $\varphi'$ vanishes at a unique point $x_0\in I$ and $\varphi''(x_0)<0$;
-    \item[(iii)] $g(x_0)\neq 0$.
-\end{enumerate}
-Then
-\[
-\int_a^b e^{\,t\varphi(x)}\, g(x)\,dx
-\sim
-\sqrt{\frac{2\pi}{t\,|\varphi''(x_0)|}}\,
-e^{\,t\varphi(x_0)}\, g(x_0)
-\qquad\text{as } t\to +\infty .\]
-
 
 
 $\\[0.8em]$
+We would like to get an explicit form of our Eq.~7. To do so, we'll use Laplace's approximation (see Appendix).
 Knowing that
 \begin{equation}
 \forall h \in \mathbf{R},
@@ -166,7 +151,7 @@ $\frac{\partial f}{\partial h}(h^\star,\alpha,x) = 0$
 to be able to use Laplace approximation.
 
 $\\[0.3em]$
-In this case, by applying the approximation to Eq (7), we get :
+In this case, by applying the approximation to Eq.~7, we get :
 
 \begin{equation}
 \boxed{
@@ -220,7 +205,7 @@ As a first approximation, we can consider that :
 \end{equation}
 
 $\\[0.1em]$
-We can use the Laplace approximation given by Eq(12), which becomes :
+We can use the Laplace approximation given by Eq.~12, which becomes :
 
 \begin{equation}
 \boxed{
@@ -295,12 +280,12 @@ e^{2\alpha(c_1 + c_2)}
 where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
 
 $\\[0.1em]$
-We can now plug the obtained $h^\star$ into Eq(12).
+We can now plug the obtained $h^\star$ into Eq.~12.
 
 
 \section{Normalized PDF}
 
-According to Eq 12 of Chevillard et al., the $p$-th order moment of the velocity increment
+According to (Chevillard et al., 2012, Eq.~12), the $p$-th order moment of the velocity increment
 is expressed as
 \begin{equation}
 \langle |\delta_\ell u|^p \rangle \underset{\ell \to 0}{\approx} \sigma^2 \langle |\delta|^p \rangle \left(\frac{\ell}{L}\right)^{\zeta_p},
@@ -330,7 +315,7 @@ Hence, the minimizing exponent is
 h_p = c_1 - p c_2,
 \tag{23}
 \end{equation}
-and inserting this value into Eq.~(20) gives
+and inserting this value into Eq.~20 gives
 \begin{equation}
 \zeta_p = p c_1 - \frac{p^2}{2} c_2
 \tag{24}
@@ -387,7 +372,7 @@ i.e.
 \end{equation}
 
 $\\[0.1em]$
-We then obtain from Eq (12) the normalized form of the PDF :
+We then obtain from Eq.~12 the normalized form of the PDF :
 
 \begin{equation}
 \boxed{
@@ -421,7 +406,7 @@ which is valid if $h^\star$ is such that $\frac{\partial f}{\partial h}(h^\star,
 
 If we consider that
 $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)} x)\Big|_{h^\star=c_1} = 0$,
-then we get from Eq (30) :
+then we get from Eq.~30 :
 
 \begin{equation}
 \boxed{
@@ -454,7 +439,7 @@ e^{2\alpha c_2}
 \subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0\) via the Lambert \(W\) function}
 
 We want to find \(h^\star\) such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)}x) = 0$.
-In Eq(19), by considering that \(h^\star\) is a function of x, we just need to replace x by \( \sigma e^{\alpha (c_2-c_1)} x\). We get :
+In Eq.~19, by considering that \(h^\star\) is a function of x, we just need to replace x by \( \sigma e^{\alpha (c_2-c_1)} x\). We get :
 
 \begin{equation}
 \boxed{
@@ -468,7 +453,7 @@ W\!\left(
 \tag{32}
 \end{equation}
 
-We can now plug the obtained $h^\star$ into Eq(30). Let $W=W\!\left( 2\alpha c_2 x^2 e^{4\alpha c_2} \right)$. We get :
+We can now plug the obtained $h^\star$ into Eq.~30. Let $W=W\!\left( 2\alpha c_2 x^2 e^{4\alpha c_2} \right)$. We get :
 
 \begin{equation}
 \boxed{
@@ -503,7 +488,7 @@ i.e.
 \section{Entropy of the normalized PDF}
 
 We now compute the Shannon entropy of the normalized increment PDF
-\(\mathcal{P}_{\delta_\ell \nu}\) obtained in Eq. (28). By definition,
+\(\mathcal{P}_{\delta_\ell \nu}\) obtained in Eq.~28. By definition,
 \begin{equation}
 S(\delta_\ell \nu)
 =
@@ -522,5 +507,22 @@ S(\delta_\ell \nu)
 [1] L. Chevillard, B. Castaing, A. Arneodo, E. Lévêque, J.-F. Pinton, and S. G. Roux,
 \emph{A phenomenological theory of Eulerian and Lagrangian velocity fluctuations in turbulent flows},
 C.~R.~Physique, \textbf{13}, 899–928 (2012).
+
+\appendix
+\section{Appendix - Laplace's approximation theorem}
+Let $I=[a,b]$ be an interval, $\varphi\in C^2(I,\mathbb{R})$
+and $g\in C^0(I,\mathbb{C})$. Assume that:
+\begin{enumerate}
+    \item[(i)] For all $t>0$, $\displaystyle \int_a^b e^{t\varphi(x)} |g(x)|\,dx < +\infty$;
+    \item[(ii)] $\varphi'$ vanishes at a unique point $x_0\in I$ and $\varphi''(x_0)<0$;
+    \item[(iii)] $g(x_0)\neq 0$.
+\end{enumerate}
+Then
+\[
+\int_a^b e^{\,t\varphi(x)}\, g(x)\,dx
+\sim
+\sqrt{\frac{2\pi}{t\,|\varphi''(x_0)|}}\,
+e^{\,t\varphi(x_0)}\, g(x_0)
+\qquad\text{as } t\to +\infty .\]
 
 \end{document}
