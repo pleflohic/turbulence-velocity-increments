@@ -11,19 +11,18 @@
 \maketitle
 
 \begin{abstract}
-We study probability density functions of Eulerian velocity increments in turbulent flows using the multifractal propagator formalism with the Kolmogorov--Oboukhov lognormal model. The increment PDFs are expressed as integrals over the Hölder exponent that lack closed-form solutions. We apply Laplace's method to derive asymptotic approximations in the inertial range, examining two saddle-point approaches: one assuming a fixed dominant exponent and another using the Lambert W function. Numerical comparisons assess the validity of each approximation and provide a basis for entropy-based intermittency analyses.
+We derive asymptotic approximations for velocity increment PDFs in the multifractal propagator framework. Using Laplace's method, we obtain two solutions: a simplified form assuming a fixed saddle point, and an exact solution via the Lambert W function. Numerical tests against the full propagator integral reveal where each approximation works best, providing groundwork for entropy calculations.
 \end{abstract}
 
 \section{Introduction}
 
-Turbulent flows exhibit intermittency: velocity fluctuations become increasingly non-Gaussian at smaller scales. Understanding the statistics of velocity increments $\delta_\ell u = u(x+\ell) - u(x)$ across scales $\ell$ is fundamental to turbulence theory.
+Turbulent flows exhibit intermittency: velocity fluctuations become increasingly non-Gaussian at smaller scales. Understanding velocity increments $\delta_\ell u = u(x+\ell) - u(x)$ across scales $\ell$ is central to turbulence theory.
 
-The multifractal approach characterizes intermittency through a distribution of local Hölder exponents $h$ with a scale-dependent spectrum $D_E(h)$. Chevillard et al.\ \cite{chevillard2012} developed a propagator formalism coupling large-scale Gaussian fluctuations with small-scale intermittency, expressing increment PDFs as integrals over the Hölder distribution.
+The multifractal approach describes intermittency through local Hölder exponents $h$ distributed according to a spectrum $D_E(h)$. Chevillard et al.~\cite{chevillard2012} proposed a propagator formalism where increment PDFs appear as integrals over the Hölder distribution, coupling Gaussian large-scale statistics with small-scale intermittency.
 
-We adopt the Kolmogorov--Oboukhov lognormal model \cite{kolmogorov1962, obukhov1962}, where $D_E(h) = 1 - (h-c_1)^2/(2c_2)$. This model provides analytical tractability while capturing key intermittency features. The resulting propagator integrals cannot be evaluated exactly, motivating our use of Laplace's method for asymptotic analysis in the limit of small scale separation.
+We use the Kolmogorov--Oboukhov lognormal model with $D_E(h) = 1 - (h-c_1)^2/(2c_2)$. This gives tractable expressions while capturing intermittency. Since the propagator integrals lack closed forms, we apply Laplace's method for asymptotic approximations at small scales.
 
-The paper is organized as follows. Section 2 derives the Hölder distribution and propagator integral. Section 3 presents two Laplace approximations: fixed saddle point (Case A) and exact solution via Lambert W (Case B). Section 4 introduces a normalized PDF based on second-order structure functions. Section 5 discusses entropy calculations. Numerical results compare both approximations with direct integration, clarifying their validity ranges.
-
+The paper proceeds as follows. Section 2 establishes the Hölder distribution and propagator integral. Section 3 derives two approximations: assuming a fixed saddle point (Case A) and solving exactly via the Lambert W function (Case B). Section 4 introduces variance-normalized PDFs. Section 5 addresses entropy. We compare both approximations numerically against the full integral to assess their accuracy.
 \section{Starting point: the distribution of $h$}
 
 We start from (Chevillard et al., 2012, Eq.~11), which defines the probability density function of the local Hölder exponent \(h\):
@@ -506,11 +505,14 @@ S(\delta_\ell \nu)
 
 
 
-\section*{References}
-\noindent
-[1] L. Chevillard, B. Castaing, A. Arneodo, E. Lévêque, J.-F. Pinton, and S. G. Roux,
+\begin{thebibliography}{9}
+
+\bibitem{chevillard2012}
+L. Chevillard, B. Castaing, A. Arneodo, E. Lévêque, J.-F. Pinton, and S. G. Roux,
 \emph{A phenomenological theory of Eulerian and Lagrangian velocity fluctuations in turbulent flows},
-C.~R.~Physique, \textbf{13}, 899–928 (2012).
+C.~R.~Physique \textbf{13}, 899--928 (2012).
+
+\end{thebibliography}
 
 \appendix
 \section{Appendix - Laplace's approximation theorem}
