@@ -81,7 +81,8 @@ INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfon
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
-INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -90,8 +91,7 @@ INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfon
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -100,11 +100,11 @@ INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfon
 OUTPUT dev.pdf
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT dev.aux
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
@@ -119,9 +119,13 @@ INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsf
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT c:/Users/Chaima/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
