@@ -11,14 +11,18 @@
 \maketitle
 
 \begin{abstract}
-\normalsize
-
-We study the probability density functions (PDFs) of Eulerian velocity increments in fully developed turbulence. The work is based on the multifractal propagator formalism and follows the phenomenological framework of Chevillard \emph{et al.} We focus on the Kolmogorov--Oboukhov log-normal model. In this picture, large-scale velocity fluctuations are Gaussian, while intermittency enters through a distribution of local Hölder exponents. These ingredients are coupled by a scale-dependent propagator, from which explicit expressions for the increment PDFs are derived as integrals over the Hölder exponent.
-
-The PDFs of the increments are written as integrals over the Hölder exponent, which cannot be evaluated in closed form. We therefore study their asymptotic behavior in the inertial-range limit of small scale separation using Laplace’s method. Two saddle-point approximations are examined. In the first one, the dominant Hölder exponent is assumed to be fixed. In the second one, the saddle point is obtained exactly by solving the stationarity condition with the Lambert \(W\) function. Both approximations are compared with direct numerical evaluations of the full propagator integral.
-
-We also introduce a scale-dependent normalization based on the second-order structure function. This normalization allows a direct comparison of PDFs at different scales and separates variance scaling from genuine intermittency effects. Numerical results obtained from Julia notebooks show the evolution of the PDF shapes with scale, including logarithmic representations. At small scales, the Laplace approximation captures the dominant behavior of the full propagator. The remaining discrepancies quantify the limits of the reduced assumptions and clarify the range of validity of asymptotic treatments in the propagator framework, providing a controlled basis for subsequent entropy-based analyses of intermittency.
+We study probability density functions of Eulerian velocity increments in turbulent flows using the multifractal propagator formalism with the Kolmogorov--Oboukhov lognormal model. The increment PDFs are expressed as integrals over the Hölder exponent that lack closed-form solutions. We apply Laplace's method to derive asymptotic approximations in the inertial range, examining two saddle-point approaches: one assuming a fixed dominant exponent and another using the Lambert W function. Numerical comparisons assess the validity of each approximation and provide a basis for entropy-based intermittency analyses.
 \end{abstract}
+
+\section{Introduction}
+
+Turbulent flows exhibit intermittency: velocity fluctuations become increasingly non-Gaussian at smaller scales. Understanding the statistics of velocity increments $\delta_\ell u = u(x+\ell) - u(x)$ across scales $\ell$ is fundamental to turbulence theory.
+
+The multifractal approach characterizes intermittency through a distribution of local Hölder exponents $h$ with a scale-dependent spectrum $D_E(h)$. Chevillard et al.\ \cite{chevillard2012} developed a propagator formalism coupling large-scale Gaussian fluctuations with small-scale intermittency, expressing increment PDFs as integrals over the Hölder distribution.
+
+We adopt the Kolmogorov--Oboukhov lognormal model \cite{kolmogorov1962, obukhov1962}, where $D_E(h) = 1 - (h-c_1)^2/(2c_2)$. This model provides analytical tractability while capturing key intermittency features. The resulting propagator integrals cannot be evaluated exactly, motivating our use of Laplace's method for asymptotic analysis in the limit of small scale separation.
+
+The paper is organized as follows. Section 2 derives the Hölder distribution and propagator integral. Section 3 presents two Laplace approximations: fixed saddle point (Case A) and exact solution via Lambert W (Case B). Section 4 introduces a normalized PDF based on second-order structure functions. Section 5 discusses entropy calculations. Numerical results compare both approximations with direct integration, clarifying their validity ranges.
 
 \section{Starting point: the distribution of $h$}
 
