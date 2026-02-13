@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath,amssymb,graphicx}
 \usepackage{geometry}
+\usepackage{float}
 \geometry{margin=2.5cm}
 
 \begin{document}
@@ -196,6 +197,20 @@ e^{2\alpha h^\star}
 \tag{12}
 \end{equation}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf1.png}
+    \caption{$P_{\delta_\ell u}$ and $\log(P_{\delta_\ell u})$ plots using the explicit form of the PDF (Julia, QuadGK)}
+    \label{fig:pdf1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/flatness.png}
+    \caption{}
+    \label{fig:flatness}
+\end{figure}
+
 
 \subsection{Case A: assuming \(h^\star = c_1\)}
 
@@ -231,6 +246,13 @@ e^{2\alpha c_1}
 }
 \tag{14}
 \end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/pdf2.png}
+    \caption{}
+    \label{fig:pdf2}
+\end{figure}
 
 \subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,x)=0\) via the Lambert \(W\) function}
 
@@ -269,7 +291,7 @@ e^{2\alpha(c_1 + c_2)}
 Hence
 \begin{equation}
 \boxed{
-h^\star
+h^\star(\alpha,x)
 = (c_1 + c_2)
 - \frac{1}{2\alpha}
 W\!\left(
@@ -284,6 +306,14 @@ where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
 
 $\\[0.1em]$
 We can now plug the obtained $h^\star$ into Eq.~12.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/pdf3.png}
+    \caption{}
+    \label{fig:pdf3}
+\end{figure}
 
 
 \section{Normalized PDF}
@@ -405,6 +435,21 @@ e^{2\alpha (h^\star + c_2 - c_1)}
 which is valid if $h^\star$ is such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0$.
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_pdf1.png}
+    \caption{}
+    \label{fig:n_pdf1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_flatness.png}
+    \caption{}
+    \label{fig:n_flatness}
+\end{figure}
+
+
 \subsection{Case A: assuming \(h^\star = c_1\)}
 
 If we consider that
@@ -437,16 +482,23 @@ e^{2\alpha c_2}
 \tag{31}
 \end{equation}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_pdf2.png}
+    \caption{}
+    \label{fig:n_pdf2}
+\end{figure}
+
 
 
 \subsection{Case B: solving \(\frac{\partial f}{\partial h}(h,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0\) via the Lambert \(W\) function}
 
 We want to find \(h^\star\) such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)}x) = 0$.
-In Eq.~19, by considering that \(h^\star\) is a function of x, we just need to replace x by \( \sigma e^{\alpha (c_2-c_1)} x\). We get :
+Thanks to Eq.~19, we have :
 
 \begin{equation}
 \boxed{
-h^\star
+h^\star(\alpha,\sigma e^{\alpha (c_2-c_1)}x)
 = (c_1 + c_2)
 - \frac{1}{2\alpha}
 W\!\left(
@@ -485,6 +537,13 @@ i.e.
 \tag{34}
 \end{equation}
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_pdf3.png}
+    \caption{}
+    \label{fig:n_pdf3}
+\end{figure}
 
 
 
