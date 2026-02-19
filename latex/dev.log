@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.10.14)  13 FEB 2026 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.10.14)  19 FEB 2026 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -249,74 +249,78 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<images/non_normalized_figures/pdf1.png, id=20, 886.06032pt x 362.85562pt>
+
+[2]
+<images/non_normalized_figures/pdf1.png, id=24, 886.06032pt x 362.85562pt>
 File: images/non_normalized_figures/pdf1.png Graphic file (type png)
 <use images/non_normalized_figures/pdf1.png>
 Package pdftex.def Info: images/non_normalized_figures/pdf1.png  used on input 
-line 202.
+line 218.
 (pdftex.def)             Requested size: 377.62642pt x 142.51988pt.
-
-
-[2]
 <images/non_normalized_figures/flatness.png, id=27, 1173.63469pt x 298.11375pt>
 
 File: images/non_normalized_figures/flatness.png Graphic file (type png)
 <use images/non_normalized_figures/flatness.png>
 Package pdftex.def Info: images/non_normalized_figures/flatness.png  used on in
-put line 209.
+put line 228.
 (pdftex.def)             Requested size: 377.62642pt x 95.91692pt.
 <images/non_normalized_figures/pdf2.png, id=28, 889.07156pt x 364.36125pt>
 File: images/non_normalized_figures/pdf2.png Graphic file (type png)
 <use images/non_normalized_figures/pdf2.png>
 Package pdftex.def Info: images/non_normalized_figures/pdf2.png  used on input 
-line 252.
-(pdftex.def)             Requested size: 377.62642pt x 154.75974pt.
+line 274.
+(pdftex.def)             Requested size: 377.62642pt x 142.67465pt.
 
 
 [3 <./images/non_normalized_figures/flatness.png> <./images/non_normalized_figu
-res/pdf2.png> <./images/non_normalized_figures/pdf1.png>]
-<images/non_normalized_figures/pdf3.png, id=39, 886.06032pt x 361.35pt>
+res/pdf1.png>]
+<images/non_normalized_figures/pdf3.png, id=39, 894.34125pt x 361.35pt>
 File: images/non_normalized_figures/pdf3.png Graphic file (type png)
 <use images/non_normalized_figures/pdf3.png>
 Package pdftex.def Info: images/non_normalized_figures/pdf3.png  used on input 
-line 313.
-(pdftex.def)             Requested size: 377.62642pt x 154.00455pt.
+line 335.
+(pdftex.def)             Requested size: 377.62642pt x 140.56259pt.
 
 
-[4 <./images/non_normalized_figures/pdf3.png>]
-<images/normalized_figures/n_pdf1.png, id=44, 892.83563pt x 360.59718pt>
+[4 <./images/non_normalized_figures/pdf2.png> <./images/non_normalized_figures/
+pdf3.png>]
+<images/normalized_figures/n_pdf1.png, id=48, 892.83563pt x 360.59718pt>
 File: images/normalized_figures/n_pdf1.png Graphic file (type png)
 <use images/normalized_figures/n_pdf1.png>
 Package pdftex.def Info: images/normalized_figures/n_pdf1.png  used on input li
-ne 440.
-(pdftex.def)             Requested size: 377.62642pt x 152.51721pt.
-<images/normalized_figures/n_flatness.png, id=45, 1174.3875pt x 294.34969pt>
+ne 464.
+(pdftex.def)             Requested size: 377.62642pt x 140.48291pt.
+
+
+[5]
+<images/normalized_figures/n_flatness.png, id=54, 1174.3875pt x 294.34969pt>
 File: images/normalized_figures/n_flatness.png Graphic file (type png)
 <use images/normalized_figures/n_flatness.png>
 Package pdftex.def Info: images/normalized_figures/n_flatness.png  used on inpu
-t line 447.
+t line 474.
 (pdftex.def)             Requested size: 377.62642pt x 94.64745pt.
-
-
-[5 <./images/normalized_figures/n_pdf1.png>]
-<images/normalized_figures/n_pdf2.png, id=51, 891.33pt x 368.1253pt>
+<images/normalized_figures/n_pdf2.png, id=55, 891.33pt x 368.1253pt>
 File: images/normalized_figures/n_pdf2.png Graphic file (type png)
 <use images/normalized_figures/n_pdf2.png>
 Package pdftex.def Info: images/normalized_figures/n_pdf2.png  used on input li
-ne 487.
-(pdftex.def)             Requested size: 377.62642pt x 155.95969pt.
-<images/normalized_figures/n_pdf3.png, id=52, 895.09406pt x 359.84438pt>
-File: images/normalized_figures/n_pdf3.png Graphic file (type png)
-<use images/normalized_figures/n_pdf3.png>
-Package pdftex.def Info: images/normalized_figures/n_pdf3.png  used on input li
-ne 543.
-(pdftex.def)             Requested size: 377.62642pt x 151.81445pt.
+ne 517.
+(pdftex.def)             Requested size: 377.62642pt x 143.90541pt.
 
 
 [6 <./images/normalized_figures/n_flatness.png> <./images/normalized_figures/n_
-pdf2.png>]
+pdf1.png>]
+<images/normalized_figures/n_pdf3.png, id=63, 895.09406pt x 359.84438pt>
+File: images/normalized_figures/n_pdf3.png Graphic file (type png)
+<use images/normalized_figures/n_pdf3.png>
+Package pdftex.def Info: images/normalized_figures/n_pdf3.png  used on input li
+ne 575.
+(pdftex.def)             Requested size: 377.62642pt x 139.81055pt.
 
-[7 <./images/normalized_figures/n_pdf3.png>] (./dev.aux)
+
+[7 <./images/normalized_figures/n_pdf2.png> <./images/normalized_figures/n_pdf3
+.png>]
+
+[8] (./dev.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -325,11 +329,11 @@ L3 programming layer <2025-01-18>
 Here is how much of TeX's memory you used:
  3274 strings out of 473197
  48992 string characters out of 5718604
- 452210 words of memory out of 5000000
+ 453210 words of memory out of 5000000
  26503 multiletter control sequences out of 15000+600000
  570140 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,436b,253s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,472b,253s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -352,10 +356,10 @@ msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on dev.pdf (7 pages, 955719 bytes).
+Output written on dev.pdf (8 pages, 962072 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 175 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 47 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

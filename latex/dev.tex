@@ -26,7 +26,20 @@ We use the Kolmogorov--Oboukhov lognormal model with $D_E(h) = 1 - (h-c_1)^2/(2c
 The paper proceeds as follows. Section 2 establishes the Hölder distribution and propagator integral. Section 3 derives two approximations: assuming a fixed saddle point (Case A) and solving exactly via the Lambert W function (Case B). Section 4 introduces variance-normalized PDFs. Section 5 addresses entropy. We compare both approximations numerically against the full integral to assess their accuracy.
 \section{Starting point: the distribution of $h$}
 
-We start from (Chevillard et al., 2012, Eq.~11), which defines the probability density function of the local Hölder exponent \(h\):
+The multifractal formalism for velocity increments can be interpreted as a continuous mixture of Gaussian variables. More precisely, the velocity increment at scale $\ell$, denoted as $\delta_{\ell}u$, is modeled as a Gaussian random variable conditioned on a fluctuating singularity exponent $h$. This "propagator" approach accounts for the scale-dependent intermittency by introducing a stochastic variance (Chevillard et al., 2012, Eq.~10):
+
+\begin{equation}
+\delta_{\ell}u \stackrel{\text{law}}{=} \sigma \left( \frac{\ell}{L} \right)^h \delta
+\tag{0}
+\end{equation}
+
+where $\sigma$ represents the characteristic velocity scale of the flow at the integral scale $L$, $\delta$ is a zero-mean, unit-variance Gaussian white noise, and $h$ is a fluctuating variable independent of $\delta$, whose probability density function $\mathcal{P}_h^{(\ell)}$ is governed by a singularity spectrum $\mathcal{D}(h)$.
+
+$\\[0.01em]$
+This formulation ensures that while the local physics remains quasi-Gaussian, the global distribution of $\delta_{\ell} u$ develops the heavy tails characteristic of experimental turbulent flows as the scale $\ell$ decreases.
+
+$\\[0.01em]$
+We start from (Chevillard et al., 2012, Eq.~11), which provides the probability density function of $h$ :
 \begin{equation}
 \mathcal{P}_h^{(\ell)}(h)
 =
@@ -197,17 +210,23 @@ e^{2\alpha h^\star}
 \tag{12}
 \end{equation}
 
+$\\[0.05em]$
+Here is a plot of both the obtained PDF and its log using Julia programming language.
+
 \begin{figure}[H]
     \centering
     \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf1.png}
-    \caption{$P_{\delta_\ell u}$ and $\log(P_{\delta_\ell u})$ plots using the explicit form of the PDF (Julia, QuadGK)}
+    \caption{$\mathcal{P}_{\delta_\ell u}$ and $\log(\mathcal{P}_{\delta_\ell u})$ plots using the explicit form of the PDF (Julia, QuadGK)}
     \label{fig:pdf1}
 \end{figure}
+
+$\\[0.1em]$
+In order to visualize the properties of $\mathcal{P}_{\delta_\ell u}$, we plot its second order structure, flatness and skewness.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/flatness.png}
-    \caption{}
+    \caption{Second order structure, flatness and skewness plots using the explicit form of $\mathcal{P}_{\delta_\ell u}$ (Julia, QuadGK)}
     \label{fig:flatness}
 \end{figure}
 
@@ -247,10 +266,13 @@ e^{2\alpha c_1}
 \tag{14}
 \end{equation}
 
+$\\[0.05em]$
+We plot again both the obtained PDF and its log using Julia programming language. The approximation seems to be quite accurate since the slopes are very similar to the previous plots.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/pdf2.png}
-    \caption{}
+    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf2.png}
+    \caption{$P_{\delta_\ell u}$ and $\log(P_{\delta_\ell u})$ plots using Laplace approximation of the PDF with $h^*=c_1$ (Julia, QuadGK)}
     \label{fig:pdf2}
 \end{figure}
 
@@ -305,13 +327,13 @@ e^{2\alpha(c_1 + c_2)}
 where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
 
 $\\[0.1em]$
-We can now plug the obtained $h^\star$ into Eq.~12.
+We can now plug the obtained $h^\star$ into Eq.~12. We get these plots using Julia programming language.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/pdf3.png}
-    \caption{}
+    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf3.png}
+    \caption{$P_{\delta_\ell u}$ and $\log(P_{\delta_\ell u})$ plots using Laplace approximation with $h^*$ from Lambert W (Julia, QuadGK)}
     \label{fig:pdf3}
 \end{figure}
 
@@ -434,18 +456,23 @@ e^{2\alpha (h^\star + c_2 - c_1)}
 
 which is valid if $h^\star$ is such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0$.
 
+$\\[0.1em]$
+As in the non-normalized case, here are the plots of both the obtained PDF and and its log using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_pdf1.png}
-    \caption{}
+    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/normalized_figures/n_pdf1.png}
+    \caption{$P_{\delta_\ell \nu}$ and $\log(P_{\delta_\ell \nu})$ plots using the explicit form of the PDF (Julia, QuadGK)}
     \label{fig:n_pdf1}
 \end{figure}
+
+$\\[0.05em]$
+We provide the second order structure, flatness and skewness plots of $\mathcal{P}_{\delta_\ell \nu}$ as well.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_flatness.png}
-    \caption{}
+    \caption{Second order structure, flatness and skewness plots using the explicit form of $P_{\delta_\ell \nu}$ (Julia, QuadGK)}
     \label{fig:n_flatness}
 \end{figure}
 
@@ -482,10 +509,13 @@ e^{2\alpha c_2}
 \tag{31}
 \end{equation}
 
+$\\[0.05em]$
+We plot both the obtained PDF and its log using Julia programming language. The approximation seems to be quite accurate again since the slopes are very similar to the previous plots.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_pdf2.png}
-    \caption{}
+    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/normalized_figures/n_pdf2.png}
+    \caption{$P_{\delta_\ell \nu}$ and $\log(P_{\delta_\ell \nu})$ plots using Laplace approximation of the PDF with $h^*=c_1$ (Julia, QuadGK)}
     \label{fig:n_pdf2}
 \end{figure}
 
@@ -537,11 +567,13 @@ i.e.
 \tag{34}
 \end{equation}
 
+$\\[0.1em]$
+We get the following plots using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_pdf3.png}
-    \caption{}
+    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/normalized_figures/n_pdf3.png}
+    \caption{$P_{\delta_\ell \nu}$ and $\log(P_{\delta_\ell \nu})$ plots using Laplace approximation with $h^*$ from Lambert W (Julia, QuadGK)}
     \label{fig:n_pdf3}
 \end{figure}
 
