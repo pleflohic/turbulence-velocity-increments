@@ -12,34 +12,31 @@
 \maketitle
 
 \begin{abstract}
-We derive asymptotic approximations for velocity increment PDFs in the multifractal propagator framework. Using Laplace's method, we obtain two solutions: a simplified form assuming a fixed saddle point, and an exact solution via the Lambert W function. Numerical tests against the full propagator integral reveal where each approximation works best, providing groundwork for entropy calculations.
+We derive asymptotic approximations for velocity increment PDFs in the multifractal propagator framework. Using Laplace's method, we obtain two solutions: a simplified form assuming a fixed saddle point, and a better approximation via the Lambert W function. Numerical tests against the full propagator integral reveal where each approximation works best, providing groundwork for entropy calculations.
 \end{abstract}
 
 \section{Introduction}
 
-Turbulent flows exhibit intermittency: velocity fluctuations become increasingly non-Gaussian at smaller scales. Understanding velocity increments $\delta_\ell u = u(x+\ell) - u(x)$ across scales $\ell$ is central to turbulence theory.
+Turbulent flows exhibit intermittency: velocity fluctuations become increasingly non-Gaussian at smaller scales. The fluctuations at scale $\ell$ can be studied with the velocity increments equation.
 
-The multifractal approach describes intermittency through local Hölder exponents $h$ distributed according to a spectrum $D_E(h)$. Chevillard et al.~\cite{chevillard2012} proposed a propagator formalism where increment PDFs appear as integrals over the Hölder distribution, coupling Gaussian large-scale statistics with small-scale intermittency.
+The multifractal approach describes intermittency through local Hölder exponents $h$ distributed according to a spectrum $D_E(h)$. Chevillard et al.~\cite{chevillard2012} proposed a propagator formalism where increment PDFs appear as integrals over the Hölder distribution, allowing for Gaussian large-scale statistics with small-scale intermittency.
 
 We use the Kolmogorov--Oboukhov lognormal model with $D_E(h) = 1 - (h-c_1)^2/(2c_2)$. This gives tractable expressions while capturing intermittency. Since the propagator integrals lack closed forms, we apply Laplace's method for asymptotic approximations at small scales.
 
-The paper proceeds as follows. Section 2 establishes the Hölder distribution and propagator integral. Section 3 derives two approximations: assuming a fixed saddle point (Case A) and solving exactly via the Lambert W function (Case B). Section 4 introduces variance-normalized PDFs. Section 5 addresses entropy. We compare both approximations numerically against the full integral to assess their accuracy.
+The paper proceeds as follows. Section 2 establishes the Hölder distribution and propagator integral. Section 3 derives two approximations of the increment PDFs: assuming a fixed saddle point (Case A), and then using the Lambert W function (Case B). Section 4 introduces standardized PDFs. Section 5 addresses entropy. We compare both approximations numerically against the full integral to assess their accuracy.
 \section{Starting point: the distribution of $h$}
 
-The multifractal formalism for velocity increments can be interpreted as a continuous mixture of Gaussian variables. More precisely, the velocity increment at scale $\ell$, denoted as $\delta_{\ell}u$, is modeled as a Gaussian random variable conditioned on a fluctuating singularity exponent $h$. This "propagator" approach accounts for the scale-dependent intermittency by introducing a stochastic variance (Chevillard et al., 2012, Eq.~10):
+The multifractal formalism for velocity increments can be interpreted as a continuous mixture of Gaussian variables. More precisely, the velocity increment at scale $\ell$, denoted as $\delta_{\ell}u$, is modeled as a Gaussian random variable conditioned on a fluctuating singularity exponent $h$ (Chevillard et al., 2012, Eq.~10) :
 
 \begin{equation}
 \delta_{\ell}u \stackrel{\text{law}}{=} \sigma \left( \frac{\ell}{L} \right)^h \delta
 \tag{0}
 \end{equation}
 
-where $\sigma$ represents the characteristic velocity scale of the flow at the integral scale $L$, $\delta$ is a zero-mean, unit-variance Gaussian white noise, and $h$ is a fluctuating variable independent of $\delta$, whose probability density function $\mathcal{P}_h^{(\ell)}$ is governed by a singularity spectrum $\mathcal{D}(h)$.
+where $\sigma$ represents the characteristic velocity of the flow at the integral scale $L$, $\delta$ is a zero-mean, unit-variance Gaussian white noise, and $h$ is a fluctuating variable independent of $\delta$, whose probability density function $\mathcal{P}_h^{(\ell)}$ is governed by a singularity spectrum $\mathcal{D}(h)$.
 
 $\\[0.01em]$
-This formulation ensures that while the local physics remains quasi-Gaussian, the global distribution of $\delta_{\ell} u$ develops the heavy tails characteristic of experimental turbulent flows as the scale $\ell$ decreases.
-
-$\\[0.01em]$
-We start from (Chevillard et al., 2012, Eq.~11), which provides the probability density function of $h$ :
+We now use (Chevillard et al., 2012, Eq.~11), which provides the probability density function of $h$ :
 \begin{equation}
 \mathcal{P}_h^{(\ell)}(h)
 =
@@ -115,7 +112,7 @@ Hence,
 
 \subsection{General form of the PDF}
 
-We now consider the probability density function of velocity increments. According to (Chevillard et al., 2012, Eq.~17) :
+We now consider the probability density function of velocity increments. It's a function of the position x. According to (Chevillard et al., 2012, Eq.~17) :
 \begin{equation}
 \mathcal{P}_{\delta_\ell u}(x)
 = \frac{1}{2\pi\sigma}\,
