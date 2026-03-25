@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.10.14)  5 MAR 2026 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.10.14)  26 MAR 2026 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,9 +23,17 @@ File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
 )
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip51
+\@affilsep=\skip52
+\c@Maxaffil=\count270
+\c@authors=\count271
+\c@affil=\count272
+)
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -43,14 +51,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count270
+\inf@bad=\count273
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count271
-\leftroot@=\count272
+\uproot@=\count274
+\leftroot@=\count275
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count273
-\DOTSCASE@=\count274
+\classnum@=\count276
+\DOTSCASE@=\count277
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -63,20 +71,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen144
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count275
+\macc@depth=\count278
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count276
+\c@MaxMatrixCols=\count279
 \dotsspace@=\muskip17
-\c@parentequation=\count277
-\dspbrk@lvl=\count278
+\c@parentequation=\count280
+\dspbrk@lvl=\count281
 \tag@help=\toks18
-\row@=\count279
-\column@=\count280
-\maxfields@=\count281
+\row@=\count282
+\column@=\count283
+\maxfields@=\count284
 \andhelp@=\toks19
 \eqnshift@=\dimen145
 \alignsep@=\dimen146
@@ -85,8 +93,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \totwidth@=\dimen149
 \lineht@=\dimen150
 \@envbody=\toks20
-\multlinegap=\skip52
-\multlinetaggap=\skip53
+\multlinegap=\skip54
+\multlinetaggap=\skip55
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -135,9 +143,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count282
-\Gm@cntv=\count283
-\c@Gm@tempcnt=\count284
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
 \Gm@bindingoffset=\dimen153
 \Gm@wd@mp=\dimen154
 \Gm@odd@mp=\dimen155
@@ -150,7 +158,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count285
+\c@float@type=\count288
 \float@exts=\toks24
 \float@box=\box54
 \@float@everytoks=\toks25
@@ -158,38 +166,38 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count286
+\l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box56
 )
 (./dev.aux)
 \openout1 = `dev.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count287
+\scratchcounter=\count290
 \scratchdimen=\dimen161
 \scratchbox=\box57
-\nofMPsegments=\count288
-\nofMParguments=\count289
+\nofMPsegments=\count291
+\nofMParguments=\count292
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count290
+\MPscratchCnt=\count293
 \MPscratchDim=\dimen162
-\MPnumerator=\count291
-\makeMPintoPDFobject=\count292
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -234,12 +242,12 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -251,115 +259,130 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 [2]
-<images/non_normalized_figures/pdf1.png, id=24, 886.06032pt x 362.85562pt>
+<images/non_normalized_figures/pdf1.png, id=26, 898.0752pt x 369.0588pt>
 File: images/non_normalized_figures/pdf1.png Graphic file (type png)
 <use images/non_normalized_figures/pdf1.png>
 Package pdftex.def Info: images/non_normalized_figures/pdf1.png  used on input 
-line 215.
-(pdftex.def)             Requested size: 377.62642pt x 142.51988pt.
-<images/non_normalized_figures/flatness.png, id=27, 1173.63469pt x 298.11375pt>
-
-File: images/non_normalized_figures/flatness.png Graphic file (type png)
-<use images/non_normalized_figures/flatness.png>
-Package pdftex.def Info: images/non_normalized_figures/flatness.png  used on in
-put line 225.
-(pdftex.def)             Requested size: 377.62642pt x 95.91692pt.
-<images/non_normalized_figures/pdf2.png, id=28, 889.07156pt x 364.36125pt>
+line 256.
+(pdftex.def)             Requested size: 472.03123pt x 193.9784pt.
+<images/non_normalized_figures/pdf2.png, id=28, 898.0752pt x 369.5406pt>
 File: images/non_normalized_figures/pdf2.png Graphic file (type png)
 <use images/non_normalized_figures/pdf2.png>
 Package pdftex.def Info: images/non_normalized_figures/pdf2.png  used on input 
-line 271.
-(pdftex.def)             Requested size: 377.62642pt x 142.67465pt.
+line 302.
+(pdftex.def)             Requested size: 472.03123pt x 194.23163pt.
 
 
-[3 <./images/non_normalized_figures/flatness.png> <./images/non_normalized_figu
-res/pdf1.png>]
-<images/non_normalized_figures/pdf3.png, id=39, 894.34125pt x 361.35pt>
+[3 <./images/non_normalized_figures/pdf1.png>]
+<images/non_normalized_figures/pdf3.png, id=37, 898.0752pt x 369.5406pt>
 File: images/non_normalized_figures/pdf3.png Graphic file (type png)
 <use images/non_normalized_figures/pdf3.png>
 Package pdftex.def Info: images/non_normalized_figures/pdf3.png  used on input 
-line 332.
-(pdftex.def)             Requested size: 377.62642pt x 140.56259pt.
+line 363.
+(pdftex.def)             Requested size: 472.03123pt x 194.23163pt.
 
 
-[4 <./images/non_normalized_figures/pdf2.png> <./images/non_normalized_figures/
-pdf3.png>]
-<images/normalized_figures/n_pdf1.png, id=48, 892.83563pt x 360.59718pt>
+[4 <./images/non_normalized_figures/pdf2.png>]
+<images/non_normalized_figures/properties.png, id=43, 833.9958pt x 350.7504pt>
+File: images/non_normalized_figures/properties.png Graphic file (type png)
+<use images/non_normalized_figures/properties.png>
+Package pdftex.def Info: images/non_normalized_figures/properties.png  used on 
+input line 378.
+(pdftex.def)             Requested size: 472.03123pt x 198.52222pt.
+<images/non_normalized_figures/negentropy.png, id=45, 850.377pt x 353.6412pt>
+File: images/non_normalized_figures/negentropy.png Graphic file (type png)
+<use images/non_normalized_figures/negentropy.png>
+Package pdftex.def Info: images/non_normalized_figures/negentropy.png  used on 
+input line 399.
+(pdftex.def)             Requested size: 472.03123pt x 196.30556pt.
+
+
+[5 <./images/non_normalized_figures/pdf3.png> <./images/non_normalized_figures/
+properties.png>]
+
+[6 <./images/non_normalized_figures/negentropy.png>]
+<images/normalized_figures/n_pdf1.png, id=56, 898.0752pt x 343.0416pt>
 File: images/normalized_figures/n_pdf1.png Graphic file (type png)
 <use images/normalized_figures/n_pdf1.png>
 Package pdftex.def Info: images/normalized_figures/n_pdf1.png  used on input li
-ne 461.
-(pdftex.def)             Requested size: 377.62642pt x 140.48291pt.
-
-
-[5]
-<images/normalized_figures/n_flatness.png, id=54, 1174.3875pt x 294.34969pt>
-File: images/normalized_figures/n_flatness.png Graphic file (type png)
-<use images/normalized_figures/n_flatness.png>
-Package pdftex.def Info: images/normalized_figures/n_flatness.png  used on inpu
-t line 471.
-(pdftex.def)             Requested size: 377.62642pt x 94.64745pt.
-<images/normalized_figures/n_pdf2.png, id=55, 891.33pt x 368.1253pt>
+ne 530.
+(pdftex.def)             Requested size: 472.03123pt x 180.30367pt.
+<images/normalized_figures/n_pdf2.png, id=58, 898.0752pt x 369.5406pt>
 File: images/normalized_figures/n_pdf2.png Graphic file (type png)
 <use images/normalized_figures/n_pdf2.png>
 Package pdftex.def Info: images/normalized_figures/n_pdf2.png  used on input li
-ne 514.
-(pdftex.def)             Requested size: 377.62642pt x 143.90541pt.
+ne 574.
+(pdftex.def)             Requested size: 472.03123pt x 194.23163pt.
 
 
-[6 <./images/normalized_figures/n_flatness.png> <./images/normalized_figures/n_
-pdf1.png>]
-<images/normalized_figures/n_pdf3.png, id=63, 895.09406pt x 359.84438pt>
+[7 <./images/normalized_figures/n_pdf1.png>]
+<images/normalized_figures/n_pdf3.png, id=66, 898.0752pt x 343.5234pt>
 File: images/normalized_figures/n_pdf3.png Graphic file (type png)
 <use images/normalized_figures/n_pdf3.png>
 Package pdftex.def Info: images/normalized_figures/n_pdf3.png  used on input li
-ne 572.
-(pdftex.def)             Requested size: 377.62642pt x 139.81055pt.
+ne 634.
+(pdftex.def)             Requested size: 472.03123pt x 180.5569pt.
 
 
-[7 <./images/normalized_figures/n_pdf2.png> <./images/normalized_figures/n_pdf3
-.png>]
+[8 <./images/normalized_figures/n_pdf2.png>]
+<images/normalized_figures/n_properties.png, id=74, 833.9958pt x 350.7504pt>
+File: images/normalized_figures/n_properties.png Graphic file (type png)
+<use images/normalized_figures/n_properties.png>
+Package pdftex.def Info: images/normalized_figures/n_properties.png  used on in
+put line 648.
+(pdftex.def)             Requested size: 472.03123pt x 198.52222pt.
+<images/normalized_figures/n_negentropy.png, id=76, 858.5676pt x 353.6412pt>
+File: images/normalized_figures/n_negentropy.png Graphic file (type png)
+<use images/normalized_figures/n_negentropy.png>
+Package pdftex.def Info: images/normalized_figures/n_negentropy.png  used on in
+put line 669.
+(pdftex.def)             Requested size: 472.03123pt x 194.4277pt.
 
-[8] (./dev.aux)
+
+[9 <./images/normalized_figures/n_pdf3.png> <./images/normalized_figures/n_prop
+erties.png>]
+
+[10 <./images/normalized_figures/n_negentropy.png>] (./dev.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3274 strings out of 473197
- 48992 string characters out of 5718604
- 453210 words of memory out of 5000000
- 26503 multiletter control sequences out of 15000+600000
- 570140 words of font info for 79 fonts, out of 8000000 for 9000
+ 3391 strings out of 473197
+ 51098 string characters out of 5718604
+ 453123 words of memory out of 5000000
+ 26612 multiletter control sequences out of 15000+600000
+ 571349 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,443b,253s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,453b,399s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb>
-Output written on dev.pdf (8 pages, 961743 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on dev.pdf (10 pages, 1639248 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 193 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

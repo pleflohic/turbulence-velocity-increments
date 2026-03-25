@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[affil-it]{authblk}
 \usepackage{amsmath,amssymb,graphicx}
 \usepackage{geometry}
 \usepackage{float}
@@ -6,8 +7,47 @@
 
 \begin{document}
 
-\title{Evaluation of increment PDFs using Laplace's method}
-\author{}
+\title{Study of velocity increments in turbulent flows}
+
+\author{
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \textbf{Paul Le Flohic} \\
+        \small IMT Atlantique \\
+        \scriptsize \texttt{paul.le-flohic@imt-atlantique.net}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \textbf{Chaïma Bounadra} \\
+        \small IMT Atlantique \\
+        \scriptsize \texttt{chaima.bounadra@imt-atlantique.net}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \textbf{Anaïs Payard} \\
+        \small IMT Atlantique \\
+        \scriptsize \texttt{anais.payard@imt-atlantique.net}
+    \end{minipage}
+
+    \vspace{0.5cm}
+
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \textbf{Carlos Granero Belinchón} \\
+        \small IMT Atlantique \\
+        \scriptsize \texttt{carlos.granero-belinchon@imt-atlantique.fr}
+    \end{minipage}
+    \hspace{1.0 cm}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \textbf{Gabriel Brito Apolinário} \\
+        \small University of Bayreuth \\
+        \scriptsize \texttt{gapolinario@uni-bayreuth.de}
+    \end{minipage}
+}
+
 \date{}
 \maketitle
 
@@ -23,7 +63,8 @@ The multifractal approach describes intermittency through local Hölder exponent
 
 We use the Kolmogorov--Oboukhov lognormal model with $D_E(h) = 1 - (h-c_1)^2/(2c_2)$. This gives tractable expressions while capturing intermittency. Since the propagator integrals lack closed forms, we apply Laplace's method for asymptotic approximations at small scales.
 
-The paper proceeds as follows. Section 2 establishes the Hölder distribution and propagator integral. Section 3 derives two approximations of the increment PDFs: assuming a fixed saddle point (Case A), and then using the Lambert W function (Case B). Section 4 introduces standardized PDFs. Section 5 addresses entropy. We compare both approximations numerically against the full integral to assess their accuracy.
+The paper proceeds as follows. Section 2 establishes the Hölder distribution and propagator integral. Section 3 derives two approximations of the increment PDFs: assuming a fixed saddle point (Case A), and then using the Lambert W function (Case B). We compare both approximations numerically against the full integral to assess their accuracy. Section 4 introduces standardized PDFs using the same pathway as in section 3.
+
 \section{Starting point: the distribution of $h$}
 
 The multifractal formalism for velocity increments can be interpreted as a continuous mixture of Gaussian variables. More precisely, the velocity increment at scale $\ell$, denoted as $\delta_{\ell}u$, is modeled as a Gaussian random variable conditioned on a fluctuating singularity exponent $h$ (Chevillard et al., 2012, Eq.~10) :
@@ -108,7 +149,7 @@ Hence,
 \tag{6}
 \end{equation}
 
-\section{Computation of the PDF using Laplace's method}
+\section{Non-normalized PDF}
 
 \subsection{General form of the PDF}
 
@@ -208,23 +249,13 @@ e^{2\alpha h^\star}
 \end{equation}
 
 $\\[0.05em]$
-Here is a plot of both the obtained PDF and its log using Julia programming language.
+We provide plots of the obtained PDF using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf1.png}
-    \caption{$\mathcal{P}_{\delta_\ell u}$ and $\log(\mathcal{P}_{\delta_\ell u})$ plots using the explicit form of the PDF (Julia, QuadGK)}
+    \includegraphics[clip, width=1.0\textwidth]{images/non_normalized_figures/pdf1.png}
+    \caption{$\mathcal{P}_{\delta_\ell u}$ plots in linear and log scales using the explicit form of the PDF (Julia, QuadGK)}
     \label{fig:pdf1}
-\end{figure}
-
-$\\[0.1em]$
-In order to visualize the properties of $\mathcal{P}_{\delta_\ell u}$, we plot its second order structure, flatness and skewness.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/non_normalized_figures/flatness.png}
-    \caption{Second order structure, flatness and skewness plots using the explicit form of $\mathcal{P}_{\delta_\ell u}$ (Julia, QuadGK)}
-    \label{fig:flatness}
 \end{figure}
 
 
@@ -264,12 +295,12 @@ e^{2\alpha c_1}
 \end{equation}
 
 $\\[0.05em]$
-We plot again both the obtained PDF and its log using Julia programming language. The approximation seems to be quite accurate since the slopes are very similar to the previous plots.
+Here are plots of the obtained PDF using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf2.png}
-    \caption{$P_{\delta_\ell u}$ and $\log(P_{\delta_\ell u})$ plots using Laplace approximation of the PDF with $h^*=c_1$ (Julia, QuadGK)}
+    \includegraphics[clip, width=1.0\textwidth]{images/non_normalized_figures/pdf2.png}
+    \caption{$P_{\delta_\ell u}$ plots in linear and log scales using Laplace approximation of the PDF with $h^\star = c_1$ (Julia, QuadGK)}
     \label{fig:pdf2}
 \end{figure}
 
@@ -321,18 +352,56 @@ e^{2\alpha(c_1 + c_2)}
 }
 \tag{19}
 \end{equation}
-where \(W(x)\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
+where \(W\) is the Lambert \(W\) function (the inverse of \(w\mapsto we^w\)).
 
 $\\[0.1em]$
-We can now plug the obtained $h^\star$ into Eq.~12. We get these plots using Julia programming language.
+We can now plug the obtained $h^\star$ into Eq.~12. Here are plots of the obtained PDF using Julia programming language.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/non_normalized_figures/pdf3.png}
-    \caption{$P_{\delta_\ell u}$ and $\log(P_{\delta_\ell u})$ plots using Laplace approximation with $h^*$ from Lambert W (Julia, QuadGK)}
+    \includegraphics[clip, width=1.0\textwidth]{images/non_normalized_figures/pdf3.png}
+    \caption{$\mathcal{P}_{\delta_\ell u}$ plots in linear and log scales using Laplace approximation with $h^\star$ from Lambert W (Julia, QuadGK)}
     \label{fig:pdf3}
 \end{figure}
+
+$\\[0.1em]$
+Comparing the plots, it is clear that the approximation using the Lambert W function is better than the one assuming $h^\star = c_1$.
+
+\subsection{Properties of the non-normalized PDFs}
+
+$\\[0.1em]$
+We provide plots of the second-order structure functions and of the flatness functions in the three different cases.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[clip, width=1.0\textwidth]{images/non_normalized_figures/properties.png}
+    \caption{Second-order structure functions and flatness of $\mathcal{P}_{\delta_\ell u}$ in linear and log scales (Julia, QuadGK)}
+    \label{fig:properties}
+\end{figure}
+
+$\\[0.1em]$
+We also consider the Shannon entropy :
+\begin{equation}
+S(\delta_\ell u)
+=
+- \int_{-\infty}^{+\infty}
+\mathcal{P}_{\delta_\ell u}(x)\,
+\ln\!\bigl[\mathcal{P}_{\delta_\ell u}(x)\bigr]\,
+\mathrm{d}x
+\tag{20}
+\end{equation}
+
+Here are plots of the Shannon entropy using the three different expressions of $\mathcal{P}_{\delta_\ell u}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[clip, width=1.0\textwidth]{images/non_normalized_figures/negentropy.png}
+    \caption{Shannon entropy of $\mathcal{P}_{\delta_\ell u}$ in linear and log scales (Julia, QuadGK)}
+    \label{fig:negentropy}
+\end{figure}
+
+
 
 
 \section{Normalized PDF}
@@ -343,13 +412,13 @@ is expressed as
 \langle |\delta_\ell u|^p \rangle \underset{\ell \to 0}{\approx} \sigma^2 \langle |\delta|^p \rangle \left(\frac{\ell}{L}\right)^{\zeta_p},
 \quad\text{with}\quad
 \zeta_p = \min_h \bigl[ p h + 1 - \mathcal{D}^E(h) \bigr] \quad\text{and}\quad \delta \sim \mathcal{N}(0,1).
-\tag{20}
+\tag{21}
 \end{equation}
 
 Using the Kolmogorov–Oboukhov log-normal spectrum
 \begin{equation}
 \mathcal{D}^E(h) = 1 - \frac{(h - c_1)^2}{2c_2},
-\tag{21}
+\tag{22}
 \end{equation}
 
 the minimization problem is
@@ -359,13 +428,13 @@ the minimization problem is
 \quad i.e. \quad
 \frac{\mathrm{d}}{\mathrm{d}h}
 \bigl[p h + \frac{(h-c_1)^2}{2c_2}\bigr] = 0
-\tag{22}
+\tag{23}
 \end{equation}
 
 Hence, the minimizing exponent is
 \begin{equation}
 h_p = c_1 - p c_2,
-\tag{23}
+\tag{24}
 \end{equation}
 and inserting this value into Eq.~20 gives
 \begin{equation}
@@ -376,7 +445,7 @@ and inserting this value into Eq.~20 gives
 In particular, for the second-order :
 \begin{equation}
 \zeta_2 = 2(c_1 - c_2)
-\tag{25}
+\tag{26}
 \end{equation}
 
 Knowing that $\langle |\delta|^2 \rangle = 1$, we get :
@@ -386,7 +455,7 @@ Knowing that $\langle |\delta|^2 \rangle = 1$, we get :
 \underset{\ell \to 0}{\approx}
 \sigma^2 \left( \frac{\ell}{L} \right)^{2(c_1 - c_2)}.
 }
-\tag{26}
+\tag{27}
 \end{equation}
 
 We now define a normalized increment
@@ -396,14 +465,14 @@ We now define a normalized increment
 = \frac{\delta_\ell u}{\sqrt{\langle (\delta_\ell u)^2 \rangle}}
 = \frac{\delta_\ell u}{\sigma \left( \frac{\ell}{L} \right)^{c_1 - c_2}}
 }
-\tag{27}
+\tag{28}
 \end{equation}
 
 $\\[0.3em]$
 This normalization ensures that
 \begin{equation}
 \langle (\delta_\ell \nu)^2 \rangle = 1,
-\tag{28}
+\tag{29}
 \end{equation}
 for all scales $\ell/L$, so that all normalized PDFs can be directly compared across scales.
 
@@ -420,7 +489,7 @@ i.e.
 \boxed{
 \mathcal{P}_{\delta_\ell \nu}(x) = \sigma e^{\alpha (c_2 - c_1)} \mathcal{P}_{\delta_\ell u}(\sigma e^{\alpha (c_2 - c_1)}x)
 }
-\tag{29}
+\tag{30}
 \end{equation}
 
 $\\[0.1em]$
@@ -448,30 +517,21 @@ e^{2\alpha (h^\star + c_2 - c_1)}
 \right]
 \end{aligned}
 }
-\tag{30}
+\tag{31}
 \end{equation}
 
 which is valid if $h^\star$ is such that $\frac{\partial f}{\partial h}(h^\star,\alpha,\sigma e^{\alpha (c_2-c_1)} x)=0$.
 
 $\\[0.1em]$
-As in the non-normalized case, here are the plots of both the obtained PDF and and its log using Julia programming language.
+As in the non-normalized case, we provide the plots of the obtained PDF in linear ang log cases using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/normalized_figures/n_pdf1.png}
-    \caption{$P_{\delta_\ell \nu}$ and $\log(P_{\delta_\ell \nu})$ plots using the explicit form of the PDF (Julia, QuadGK)}
+    \includegraphics[clip, width=1.0\textwidth]{images/normalized_figures/n_pdf1.png}
+    \caption{$P_{\delta_\ell \nu}$ plots in linear and log scales using the explicit form of the PDF (Julia, QuadGK)}
     \label{fig:n_pdf1}
 \end{figure}
 
-$\\[0.05em]$
-We provide the second order structure, flatness and skewness plots of $\mathcal{P}_{\delta_\ell \nu}$ as well.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/normalized_figures/n_flatness.png}
-    \caption{Second order structure, flatness and skewness plots using the explicit form of $P_{\delta_\ell \nu}$ (Julia, QuadGK)}
-    \label{fig:n_flatness}
-\end{figure}
 
 
 \subsection{Case A: assuming \(h^\star = c_1\)}
@@ -503,16 +563,16 @@ e^{2\alpha c_2}
 \right]
 \end{aligned}
 }
-\tag{31}
+\tag{32}
 \end{equation}
 
 $\\[0.05em]$
-We plot both the obtained PDF and its log using Julia programming language. The approximation seems to be quite accurate again since the slopes are very similar to the previous plots.
+Here are the plots the obtained PDF in linear and log scales using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/normalized_figures/n_pdf2.png}
-    \caption{$P_{\delta_\ell \nu}$ and $\log(P_{\delta_\ell \nu})$ plots using Laplace approximation of the PDF with $h^*=c_1$ (Julia, QuadGK)}
+    \includegraphics[clip, width=1.0\textwidth]{images/normalized_figures/n_pdf2.png}
+    \caption{$P_{\delta_\ell \nu}$ plots in linear and log scales using Laplace approximation of the PDF with $h^*=c_1$ (Julia, QuadGK)}
     \label{fig:n_pdf2}
 \end{figure}
 
@@ -532,7 +592,7 @@ W\!\left(
 2\alpha c_2 x^2 e^{4\alpha c_2}
 \right)
 }
-\tag{32}
+\tag{33}
 \end{equation}
 
 We can now plug the obtained $h^\star$ into Eq.~30. Let $W=W\!\left( 2\alpha c_2 x^2 e^{4\alpha c_2} \right)$. We get :
@@ -549,7 +609,7 @@ We can now plug the obtained $h^\star$ into Eq.~30. Let $W=W\!\left( 2\alpha c_2
 -\frac{1}{2} x^2 e^{4 \alpha c_2 - W}
 \right]
 }
-\tag{33}
+\tag{34}
 \end{equation}
 
 i.e.
@@ -561,25 +621,37 @@ i.e.
 \frac{e^\frac{3}{2}c_2 \alpha}{\sqrt{2\pi}}
 \frac{e^{-\frac{2W + W^2}{8c_2 \alpha}}}{\sqrt{1+W}}
 }
-\tag{34}
+\tag{35}
 \end{equation}
 
+which is the same equation as (Granero Belinchón et al., 2017, Eq.~18).
+
 $\\[0.1em]$
-We get the following plots using Julia programming language.
+We plot again the obtained PDF in linear and log cases using Julia programming language.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[trim={0 0 0 1cm}, clip, width=0.8\textwidth]{images/normalized_figures/n_pdf3.png}
-    \caption{$P_{\delta_\ell \nu}$ and $\log(P_{\delta_\ell \nu})$ plots using Laplace approximation with $h^*$ from Lambert W (Julia, QuadGK)}
+    \includegraphics[clip, width=1.0\textwidth]{images/normalized_figures/n_pdf3.png}
+    \caption{$P_{\delta_\ell \nu}$ plots in linear and log scales using Laplace approximation with $h^*$ from Lambert W (Julia, QuadGK)}
     \label{fig:n_pdf3}
 \end{figure}
 
 
 
-\section{Entropy of the normalized PDF}
+\subsection{Properties of the normalized PDFs}
 
-We now compute the Shannon entropy of the normalized increment PDF
-\(\mathcal{P}_{\delta_\ell \nu}\) obtained in Eq.~28. By definition,
+$\\[0.1em]$
+As in the non-normalized case, we provide plots of the second-order structure functions and of the flatness functions in the three different cases.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[clip, width=1.0\textwidth]{images/normalized_figures/n_properties.png}
+    \caption{Second-order structure functions and flatness of $\mathcal{P}_{\delta_\ell \nu}$ in linear and log scales (Julia, QuadGK)}
+    \label{fig:n_properties}
+\end{figure}
+
+$\\[0.1em]$
+We consider the Shannon entropy in the normalized case :
 \begin{equation}
 S(\delta_\ell \nu)
 =
@@ -587,8 +659,17 @@ S(\delta_\ell \nu)
 \mathcal{P}_{\delta_\ell \nu}(x)\,
 \ln\!\bigl[\mathcal{P}_{\delta_\ell \nu}(x)\bigr]\,
 \mathrm{d}x
-\tag{35}
+\tag{36}
 \end{equation}
+
+Here are plots of the Shannon entropy using the three different expressions of $\mathcal{P}_{\delta_\ell \nu}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[clip, width=1.0\textwidth]{images/normalized_figures/n_negentropy.png}
+    \caption{Shannon entropy of $\mathcal{P}_{\delta_\ell \nu}$ in linear and log scales (Julia, QuadGK)}
+    \label{fig:n_negentropy}
+\end{figure}
 
 
 
@@ -599,6 +680,11 @@ S(\delta_\ell \nu)
 L. Chevillard, B. Castaing, A. Arneodo, E. Lévêque, J.-F. Pinton, and S. G. Roux,
 \emph{A phenomenological theory of Eulerian and Lagrangian velocity fluctuations in turbulent flows},
 C.~R.~Physique \textbf{13}, 899--928 (2012).
+
+\bibitem{granero2017}
+C. Granero-Belinchón, S. G. Roux, and N. B. Garnier,
+\emph{A Kullback-Leibler divergence measure of intermittency: application to turbulence},
+Phys. Rev. E \textbf{97}, 013112 (2017).
 
 \end{thebibliography}
 
