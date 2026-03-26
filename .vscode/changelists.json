@@ -1,0 +1,21 @@
+{
+  "changelists": [
+    {
+      "name": "Default",
+      "files": [
+        "latex/images/non_normalized_figures/negentropy.png",
+        "latex/images/non_normalized_figures/pdf1.png",
+        "latex/images/non_normalized_figures/pdf2.png",
+        "latex/images/non_normalized_figures/pdf3.png",
+        "latex/images/non_normalized_figures/properties.png",
+        "latex/images/normalized_figures/n_negentropy.png",
+        "latex/images/normalized_figures/n_pdf1.png",
+        "latex/images/normalized_figures/n_pdf2.png",
+        "latex/images/normalized_figures/n_pdf3.png",
+        "latex/images/normalized_figures/n_properties.png",
+        "notebooks/non_normalized.ipynb"
+      ]
+    }
+  ],
+  "active": "Default"
+}
